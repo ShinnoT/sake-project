@@ -15,6 +15,21 @@ ActiveRecord::Schema.define(version: 20171024055048) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "nihonshus", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "acidity"
+    t.integer  "taste"
+    t.integer  "body"
+    t.string   "region"
+    t.float    "price"
+    t.string   "temp"
+    t.string   "sku"
+    t.string   "classification"
+    t.string   "aroma"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
