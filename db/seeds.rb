@@ -11,13 +11,21 @@ Nihonshu.destroy_all
 
 region = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","roppongi"]
 temp = ["hot", "warm","cold"]
-photos = ["http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg", "http://www.motherjones.com/wp-content/uploads/2017/08/pumpkin-4.jpg?w=630"]
+photos = []
 price = [12.00, 5.32, 34.55, 6.45]
 scale = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 aroma = ["flowery", "pungent", "sharp"]
 
+barcode = []
 
 20.times do
+
+  13.times do
+    barcode << rand(0..9).to_s
+  end
+
+  code = barcode.join("")
+
   sake = Nihonshu.create(
     name: Faker::Coffee.blend_name,
     acidity: scale.sample,
@@ -26,9 +34,11 @@ aroma = ["flowery", "pungent", "sharp"]
     region: region.sample,
     price: price.sample,
     temp: temp.sample,
-    sku: "0551211515",
+    sku: code,
     classification: "rice",
     aroma: aroma.sample)
+
+  barcode = []
 end
 
 puts 'Creating nihonshus!'
@@ -36,7 +46,12 @@ puts 'Creating nihonshus!'
 
 
 # 12.times do
-#   User.create(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name:Faker::Name.last_name , password: 'password', address: cities.sample)
+#   User.create(
+      # email: Faker::Internet.email,
+      # first_name: Faker::Name.first_name,
+      # last_name:Faker::Name.last_name ,
+      # password: 'password',
+      # address: cities.sample)
 # end
 
 
