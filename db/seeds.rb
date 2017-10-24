@@ -8,9 +8,8 @@
 
 
 Nihonshu.destroy_all
-User.destroy_all
 
-sake = Nihonshu.new(name: "dai", acidity: 1, taste: 2, body: 4, region: "tokyo")
+sake = Nihonshu.new(name: "dai")
 sake.save
 
 puts 'Creating nihonshus!'

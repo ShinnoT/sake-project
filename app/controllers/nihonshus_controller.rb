@@ -2,7 +2,7 @@ class NihonshusController < ApplicationController
  skip_before_action :authenticate_user!, only: [:index, :search]
 
  def search
-  @nihonshus = Nihonshus.all
+  @nihonshus = Nihonshu.all
 
   if params[:search]
     @nihonshus = Nihonshus.search(params[:search])
@@ -12,6 +12,6 @@ class NihonshusController < ApplicationController
 end
 
 def index
-  @Nihonshus = Nihonshus.all
+  @Nihonshus = Nihonshu.all
 end
 end
