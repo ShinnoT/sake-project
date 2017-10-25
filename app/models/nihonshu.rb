@@ -11,5 +11,4 @@ class Nihonshu < ApplicationRecord
     where("name LIKE ?", "%#{query}%")
   end
 
-
 end
