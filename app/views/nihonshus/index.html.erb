@@ -1,7 +1,44 @@
-<%= simple_form_for :search, url:search_path, method: :get do |f| %>
-<%#= simple_form_for :item, :url => {:action => "index"} do |f| %>
-  <%= f.input :search, placeholder: "...", input_html: { name: 'search' } %>
-  <%= f.button :submit, "Search"%>
-<% end %>
+<!-- NAVBAR -->
+<div class="container">
+  <div class="banner-search" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.ciawine.com/wp-content/uploads/2014/10/UnderstandingSake.jpg');">
+    <div class="banner" >
+      <div class="banner-content">
+        <h1>Find your Sake bottle with style!</h1>
+        <p>Price comparison, ratings and reviews for any sake</p>
+      </div>
+    </div>
+    <div class="search-attributes"> <!-- SEARCH BY ATTRIBUTES -->
+        <p>Price range</p>
+        <p>rating</p>
+        <p>taste</p>
+        <a href="#" class="btn-treehouse"> show sake</a>
+    </div>
+  </div>
+  <div class="search-scan"> <!-- SEARCH BY SCAN -->
+    <h2>Or</h2>
+   <img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me">
+  </div>
+  <div class="search-all">
+    <a href="#" class="btn-treehouse"> show all sake</a>
+  </div>
+  <div class="search-selection">  <!-- SELECTION -->
+    <h3>Discover our selection</h3>
+    <div class="content">
+      <div class="container-text">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <div class="card">
+              <p> cards here </p>
+            </div>
+          </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
+
+
+    <a href="#" class="btn-treehouse"> show sake</a>
+  </div>
+</div>
