@@ -5,6 +5,8 @@ class Nihonshu < ApplicationRecord
   validates :price, numericality: { only_float: true }
   validates :temp, inclusion: { in: ["hot", "warm", "cold"] }
 
+  has_many :reviews, dependent: :destroy
+
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
   end

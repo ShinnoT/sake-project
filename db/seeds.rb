@@ -43,7 +43,7 @@ end
 
 puts 'Creating nihonshus!'
 
-
+new_user = User.create(email: "test@gmail.com", password: "123456")
 
 # 12.times do
 #   User.create(
