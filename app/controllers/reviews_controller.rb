@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   def create
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    @user = current_user
     @review = Review.new(review_params)
     @review.user = @user
     if @review.save
