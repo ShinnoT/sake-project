@@ -3,8 +3,8 @@ class NihonshusController < ApplicationController
 
   def index
     @nihonshus =
-      if params[:search]
-        redirect_to search_path(resource_object, search: params[:search])
+      if search_params
+        redirect_to search_path(resource_object, search: search_params)
       else
         nil
       end
@@ -13,10 +13,22 @@ class NihonshusController < ApplicationController
   def search
     # @nihonshus = Nihonshu.all
     @nihonshus =
-      unless params[:search].empty?
-        Nihonshu.search(params[:search])
+      unless search_params.empty?
+        Nihonshu.search(search_params)
       else
         nil
       end
+  end
+
+  def show
+    @nihonshu = Nihonshu.find(params[:id])
+  end
+
+  private
+
+  def search_params
+    unless params[:search].nil?
+      params[:search].downcase.capitalize
+    end
   end
 end
