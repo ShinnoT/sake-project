@@ -1,2 +1,11 @@
 <h1>Nihonshus#search</h1>
-<p>Find me in app/views/nihonshus/search.html.erb</p>
+
+<%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
+
+<% if @nihonshus %>
+  <% @nihonshus.each do |item| %>
+    <p><%= link_to item.name, nihonshu_path(item) %></p>
+  <% end %>
+<% else %>
+  No nihonshus
+<% end %>
