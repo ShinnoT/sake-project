@@ -14,5 +14,16 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      // $( ".navbar-form" ).hide();
+      // $( "#search-icon" ).click(function(e) {
+      //   e.preventDefault();
+      //   $( ".navbar-form" ).toggle( "slide" );
+      // });
+      $( "#search-icon" ).click(e => {
+        $( ".search-bar" ).toggleClass( "active" );
+      });
+    </script>
   </body>
 </html>
