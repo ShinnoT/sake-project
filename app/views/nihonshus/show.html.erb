@@ -1,1 +1,108 @@
-<%= @nihonshu.name %>
+<style>
+  .show-container {
+    /*background-color: red;*/
+    text-align: center;
+  }
+  .sake-pic > img {
+    width: 60%;
+    height: auto;
+  }
+  @media only screen and (max-width : 600px) {
+    .show-container {
+      /*background-color: blue;*/
+      text-align: center;
+      /*color: rgba(244, 66, 66, 0.8);*/
+      color: rgba(0,0,0,0.7);
+    }
+    .sake-pic > img {
+      width: 100%;
+      height: auto;
+    }
+    .name {
+      padding: 20px 0px 10px 0px;
+      font-size: 40px;
+      font-weight: bolder;
+    }
+    .show-button {
+      padding-bottom: 20px;
+    }
+    .more-button {
+      width: 200px;
+      height: 30px;
+      font-size: 15px;
+      padding: 2px;
+    }
+    .info {
+      text-align: left;
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 90%;
+      border-bottom: solid 3px rgba(0,0,0,0.2);
+    }
+    #rating-integer {
+      font-size: 30px;
+    }
+    .summary {
+      text-align: left;
+      margin: 0 auto;
+      /*padding-top: 15px;*/
+      padding-bottom: 15px;
+      width: 90%;
+      border-bottom: solid 3px rgba(0,0,0,0.2);
+    }
+    .summary-flex {
+      display: flex;
+      align-content: space-between;
+    }
+  }
+</style>
+
+<div class="show-container">
+  <div class="sake-pic">
+    <%= image_tag 'http://www.uwajimaya.com/static/ee_images/made/878e984abaf6f3f9/sake_large2_752_501_90.jpg' %>
+  </div>
+  <div class="sake-info">
+    <div class="name">
+      <%= @nihonshu.name %>
+    </div>
+    <div class="show-button">
+      <a href="#" class="btn btn-primary more-button">Buy Sake</a>
+    </div>
+    <div class="info">
+      <p><strong id="rating-integer">4.7</strong>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </p>
+    </div>
+    <div class="summary">
+      <h2>Summary</h2>
+      <div class="summary-flex">
+        <div>
+          <p>Sake factory name:</p>
+          <p>Okayama Sake Brewery</p>
+        </div>
+        <div>
+          <p>Region:</p>
+          <p>Okayama</p>
+        </div>
+        <div>
+          <p>Food pairing:</p>
+          <p>Beef - Fish - Rice - Tempura</p>
+        </div>
+        <div>
+          <p>Rice type:</p>
+          <p>Normal rice</p>
+        </div>
+        <div>
+          <p>Taste:</p>
+          <p>Sweet</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
