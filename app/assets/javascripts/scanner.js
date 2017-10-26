@@ -31,7 +31,7 @@ if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigat
         console.log(code);
         $.ajax({
           type: "POST",
-          url: '/products/get_barcode',
+          url: '/nihonshu/get_barcode',
           data: { upc: code }
         });
       }

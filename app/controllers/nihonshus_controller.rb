@@ -26,10 +26,10 @@ class NihonshusController < ApplicationController
 
   def get_barcode
     @nihonshu = Nihonshu.find_or_initialize_by(upc: params[:upc])
-    unless @product.new_record?
-      redirect_to @product
+    unless @nihonshu.new_record?
+      redirect_to @nihonshu
     else
-      redirect_to new_product_path(upc: params[:upc])
+      redirect_to root_path
     end
   end
 
