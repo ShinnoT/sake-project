@@ -55,3 +55,4 @@ if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigat
   });
 
 }
+$(document).on('turbolinks:load', load_quagga);
