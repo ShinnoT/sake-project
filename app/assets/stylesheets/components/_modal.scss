@@ -1,0 +1,23 @@
+.modal-container {
+  height: 100px;
+}
+.modal-button {
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  border: solid 2px rgba(255, 71, 71, 0.2);
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  margin-left: -35px;
+  z-index: 9999999999999999999999999;
+  border-radius: 50%;
+  text-align: center;
+  i {
+    font-size: 30px;
+    // margin: 18px 0;
+    // height: 66px;
+    line-height: 66px;
+  }
+}
