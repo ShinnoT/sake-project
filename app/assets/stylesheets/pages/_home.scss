@@ -1,1 +1,73 @@
-// Specific CSS for your home-page
+.banner-search {
+  background-color: #F25858;
+  color: white;
+  text-align: center;
+  background-size: cover !important;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  padding: 50px 5px;
+}
+
+.search-attributes {
+  background-color: white;
+  color: black;
+  margin: 10px;
+  border-radius: 10px;
+  margin: 0 10%
+}
+
+
+.banner-search  p{
+  color: #F25858;
+  padding: 10px 0;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.search-scan {
+  text-align: center;
+}
+.search-scan img {
+
+  height: 100px;
+  margin: 20px;
+
+}
+
+.search-all {
+  text-align: center;
+  margin: 20px;
+}
+
+.price-range {
+  margin: 10% 10%;
+}
+
+.rating{
+border-bottom: solid 1px #b2b2b2;
+border-top: solid 1px #b2b2b2;
+margin: 20px 0;
+}
+
+.taste{
+border-bottom: solid 1px #b2b2b2;
+}
+
+.show {
+margin: 10px 0;
+padding: 10px 0;
+}
+
+
+
