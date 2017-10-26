@@ -6,7 +6,7 @@
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  padding: 50px 20px;
+  padding: 50px 5px;
 }
 
 .search-attributes {
@@ -20,6 +20,7 @@
 
 .banner-search  p{
   color: #F25858;
+  padding: 10px 0;
 }
 .banner h1 {
   font-size: 50px;
@@ -47,6 +48,26 @@
 .search-all {
   text-align: center;
   margin: 20px;
-
 }
-// Specific CSS for your home-page
+
+.price-range {
+  margin: 10% 10%;
+}
+
+.rating{
+border-bottom: solid 1px #b2b2b2;
+border-top: solid 1px #b2b2b2;
+margin: 20px 0;
+}
+
+.taste{
+border-bottom: solid 1px #b2b2b2;
+}
+
+.show {
+margin: 10px 0;
+padding: 10px 0;
+}
+
+
+

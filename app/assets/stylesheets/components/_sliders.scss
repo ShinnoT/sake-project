@@ -1,8 +1,8 @@
+.rangeValues{
+  color: #b2b2b2;
+  font-size: 14px;
 
-.price-range {
-  margin: 5% 10%;
 }
-
 
 @mixin range-slider($width, $height, $input-top, $input-bg-color, $input-thumb-color, $input-height:20px, $input-border-radius:14px) {
   position: relative;
@@ -89,5 +89,5 @@
 }
 
 section.range-slider {
-  @include range-slider(100%, 100px, 50px, #F1EFEF, #413F41);
+  @include range-slider(100%, 50px, 50px, #F1EFEF, #413F41);
 }
