@@ -24,9 +24,10 @@
 }
 
 .range input {
-  width: 100%;
+  width: 80%;
   position: absolute;
   top: 2px;
+  left: 10%;
   height: 0;
   -webkit-appearance: none;
 
@@ -73,8 +74,9 @@
 
 // Labels below slider
 .range-labels {
-  margin: 18px -5% 0;
+  margin: 18px 0 0;
   padding: 0;
+  height: 30px;
   list-style: none;
 
   li {
@@ -97,6 +99,7 @@
       height: 9px;
       background: #b2b2b2;
       border-radius: 50%;
+      z-index: -1;
     }
   }
 

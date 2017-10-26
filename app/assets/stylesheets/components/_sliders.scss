@@ -1,5 +1,7 @@
 
-
+.price-range {
+  margin:10%;
+}
 
 
 @mixin range-slider($width, $height, $input-top, $input-bg-color, $input-thumb-color, $input-height:20px, $input-border-radius:14px) {
@@ -47,7 +49,7 @@
   input[type="range"]::-moz-range-thumb {
     pointer-events: all;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     -moz-appearance: none;
     width: $input-height;
     height: $input-height;
