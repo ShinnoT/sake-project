@@ -20,11 +20,13 @@ barcode = []
 
 20.times do
 
-  13.times do
-    barcode << rand(0..9).to_s
-  end
+  # 13.times do
+  #   barcode << rand(0..9).to_s
+  # end
 
-  code = barcode.join("")
+  # code = barcode.join("")
+
+  code = "5901234123457"
 
   sake = Nihonshu.create(
     name: Faker::Coffee.blend_name,
