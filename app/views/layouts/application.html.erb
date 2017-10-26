@@ -12,7 +12,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="body-wrapper">
+      <%= yield %>
+    </div>
 
     <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.min.js"></script>
     <%= javascript_include_tag 'application' %>
