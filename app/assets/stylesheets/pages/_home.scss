@@ -12,9 +12,14 @@
 .search-attributes {
   background-color: white;
   color: black;
-  margin: 10px;
   border-radius: 10px;
-  margin: 0 10%
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -50,14 +55,32 @@
   margin: 20px;
 }
 
-.price-range {
-  margin: 10% 10%;
+.price-range,
+.rating,
+.taste,
+.show {
+  padding: 10px 20px;
+  flex-basis: 100%;
+}
+
+.price-range,
+.rating,
+.taste {
+  height: 160px;
+}
+
+@media all and (min-width: 700px) {
+  .price-range,
+  .rating,
+  .taste,
+  .show {
+    flex-basis: 25%;
+  }
 }
 
 .rating{
 border-bottom: solid 1px #b2b2b2;
 border-top: solid 1px #b2b2b2;
-margin: 20px 0;
 }
 
 .taste{
@@ -65,7 +88,6 @@ border-bottom: solid 1px #b2b2b2;
 }
 
 .show {
-margin: 10px 0;
 padding: 10px 0;
 }
 

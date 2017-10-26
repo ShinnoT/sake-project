@@ -1,7 +1,8 @@
 .rangeValues{
   color: #b2b2b2;
+  display: block;
   font-size: 14px;
-
+  padding-top: 40px;
 }
 
 @mixin range-slider($width, $height, $input-top, $input-bg-color, $input-thumb-color, $input-height:20px, $input-border-radius:14px) {
@@ -9,7 +10,7 @@
   width: $width;
   height: $height;
   text-align: center;
-  margin: 10px auto;
+  margin: -7px auto;
 
   input[type="range"] {
     pointer-events: none;
@@ -24,7 +25,7 @@
     overflow: hidden;
     left: 0;
     top: $input-top;
-    width: $width;
+    width: 100%;
     outline: none;
     height: $input-height;
     margin: 0;
@@ -89,5 +90,5 @@
 }
 
 section.range-slider {
-  @include range-slider(100%, 50px, 50px, #F1EFEF, #413F41);
+  @include range-slider(80%, 50px, 0, #F1EFEF, #413F41);
 }
