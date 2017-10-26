@@ -13,50 +13,49 @@
     </div>
 
     <div class="search-attributes"> <!-- SEARCH BY ATTRIBUTES -->
-       <div class="price-range">
-          <p>Price range</p>
-          <section class="range-slider">
-            <span class="rangeValues"></span>
-            <input value="5" min="5" max="500" step="5" type="range">
-            <input value="500" min="5" max="500" step="5" type="range">
-        </section>
-      </div>
+         <div class="price-range">
+            <p>Price range</p>
+            <section class="range-slider">
+              <input value="100" min="100" max="10000" step="100" type="range">
+              <input value="10000" min="100" max="10000" step="100" type="range">
+              <span class="rangeValues"></span>
+          </section>
+        </div>
 
-        <div class="rating">
-          <p>rating</p>
+          <div class="rating">
+            <p>rating</p>
+              <div class="range">
+              <input type="range" min="1" max="5" steps="1" value="1">
+              </div>
+              <ul class="range-labels">
+                <li class="active selected">1 star</li>
+                <li>2 stars</li>
+                <li>3 stars</li>
+                <li>4 stars</li>
+                <li>5 stars</li>
+              </ul>
+          </div>
+
+          <div class="taste">
+            <p>taste</p>
             <div class="range">
-            <input type="range" min="1" max="5" steps="1" value="1">
-            </div>
-            <ul class="range-labels">
-              <li class="active selected">1 star</li>
-              <li>2 stars</li>
-              <li>3 stars</li>
-              <li>4 stars</li>
-              <li>5 stars</li>
-            </ul>
-        </div>
+              <input type="range" min="1" max="5" steps="1" value="1">
+              </div>
+              <ul class="range-labels">
+                <li class="active selected">Sweet</li>
+                <li>-</li>
+                <li>Neutral</li>
+                <li>-</li>
+                <li>Dry</li>
+              </ul>
+          </div>
 
-        <div class="taste">
-          <p>taste</p>
-          <div class="range">
-            <input type="range" min="1" max="5" steps="1" value="1">
-            </div>
-            <ul class="range-labels">
-              <li class="active selected">Sweet</li>
-              <li>-</li>
-              <li>Neutral</li>
-              <li>-</li>
-              <li>Dry</li>
-            </ul>
-        </div>
+          <div class="show">
+            <a href="#" class="btn btn-treehouse"> show sake</a>
+          </div>
 
-        <div class="show">
-          <a href="#" class="btn btn-treehouse"> show sake</a>
-        </div>
 
     </div>
-
-
 
 
 
@@ -174,7 +173,7 @@
   if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
 
   var displayElement = parent.getElementsByClassName("rangeValues")[0];
-      displayElement.innerHTML = "$ " + slide1 + "k - $" + slide2 + "k";
+      displayElement.innerHTML = "Y" + slide1 + " - Y" + slide2;
 }
 
 window.onload = function(){
