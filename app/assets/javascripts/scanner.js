@@ -25,10 +25,10 @@ if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigat
       last_result.push(last_code);
       if (last_result.length > 20) {
         code = order_by_occurrence(last_result)[0];
-        console.log(last_result);
         last_result = [];
         Quagga.stop();
 
+        console.log(last_result);
         $.ajax({
           type: "POST",
           url: '/nihonshus/get_barcode',
