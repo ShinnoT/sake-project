@@ -1,5 +1,5 @@
 class NihonshusController < ApplicationController
- skip_before_action :authenticate_user!, only: [:index, :search]
+ skip_before_action :authenticate_user!, only: [:index, :search, :get_barcode]
 
   def index
     @nihonshus =
@@ -24,15 +24,17 @@ class NihonshusController < ApplicationController
     @nihonshu = Nihonshu.find(params[:id])
   end
 
-    def get_barcode    
-       @nihonshu = Nihonshu.find_or_initialize_by(sku: params[:sku])   
-       print @nihonshu   
-       unless @nihonshu.new_record?    
-         redirect_to nihonshu_path(@nihonshu)    
-       else    
-         redirect_to user_path   
-       end   
+  def get_barcode    
+     @nihonshu = Nihonshu.find_or_initialize_by(sku: params[:sku])   
+     print @nihonshu   
+     unless @nihonshu.new_record?    
+       # redirect_to nihonshu_path(@nihonshu)    
+      render json: {target_url: nihonshu_path(@nihonshu)}    
+     else    
+      # redirect_to user_path(current_user)  
+      render json: {target_url: root_path}    
      end   
+   end   
    
 
   private

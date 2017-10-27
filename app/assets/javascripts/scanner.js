@@ -32,8 +32,11 @@ if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigat
         $.ajax({
           type: "POST",
           url: '/nihonshus/get_barcode',
-          data: { upc: code }
+          data: { sku: code },
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
+        }).then( data => {
+          console.log(data)
+          window.open(data.target_url,"_self")
         });
       }
     });
