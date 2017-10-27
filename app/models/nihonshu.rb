@@ -7,8 +7,9 @@ class Nihonshu < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
 
-  def self.search(query)
-    where("name LIKE ?", "%#{query}%")
+  def self.search(query_taste, query_price1, query_price2)
+    # where("name LIKE ?", "%#{query_name}%")
+    where("taste = ?", "#{query_taste}")
+    .where("price BETWEEN ? AND ?", "#{query_price1}", "#{query_price2}")
   end
-
 end
