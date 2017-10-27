@@ -15,26 +15,27 @@ function order_by_occurrence(arr) {
 }
 
 if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
-  console.log(1)
+  // console.log(1);
   var last_result = [];
   if (Quagga.initialized == undefined) {
-    console.log(2)
+    // console.log(2);
     Quagga.onDetected(function(result) {
-      console.log(3)
+      // console.log(3);
       var last_code = result.codeResult.code;
       last_result.push(last_code);
       if (last_result.length > 20) {
         code = order_by_occurrence(last_result)[0];
+        // console.log(last_result);
         last_result = [];
         Quagga.stop();
 
-        console.log(code);
         $.ajax({
           type: "POST",
           url: '/nihonshus/get_barcode',
           data: { sku: code },
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
         }).then( function(data) {
+          // console.log(data);
           window.open(data.target_url,"_self");
         });
       }
