@@ -30,7 +30,7 @@ class NihonshusController < ApplicationController
     unless @nihonshu.new_record?
       redirect_to nihonshu_path(@nihonshu)
     else
-      redirect_to root_path
+      redirect_to user_path
     end
   end
 
