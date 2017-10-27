@@ -31,9 +31,8 @@ if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigat
         console.log(code);
         $.ajax({
           type: "POST",
-          url: '/nihonshus/get_barcode',
-          data: { sku: code }, 
-          headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
+          url: '/products/get_barcode',
+          data: { upc: code }
         });
       }
     });
@@ -56,4 +55,4 @@ if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigat
   });
 
 }
-// $(document).on('turbolinks:load', load_quagga);
+$(document).on('turbolinks:load', load_quagga);
