@@ -33,6 +33,12 @@
   justify-content: space-between;
 }
 
+.search-right-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
