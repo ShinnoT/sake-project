@@ -1,11 +1,13 @@
 <!-- NAVBAR -->
 
-
   <div class="banner-search" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.ciawine.com/wp-content/uploads/2014/10/UnderstandingSake.jpg');">
     <div class="banner" >
       <div class="banner-content">
         <h1>Find your Sake bottle with style!</h1>
-        <p>Price comparison, ratings and reviews for any sake</p>
+        <div style="height: 60px; width: 100%; font-size: 30px;" id="typed-content">
+
+        </div>
+        <!-- <span id="typed"></span> -->
       <div class="search-all">
       <a href="#" class="btn btn-treehouse"> show all sake</a>
     </div>
@@ -137,7 +139,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 
 
 <div class="container">
@@ -150,9 +152,6 @@
     <a href="#" class="btn-treehouse"> show sake</a>
   </div>
 </div>
-
-
-
 
 
 
@@ -189,3 +188,29 @@ window.onload = function(){
 </script>
 
 
+<!-- typed.js -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+<script src="https://unpkg.com/typed.js@2.0.6/lib/typed.js"></script>
+<script>
+// const options = {
+//   strings: ["<i>First</i> sentence.", "&amp; a second sentence."],
+//   typeSpeed: 40
+// }
+
+const typed = new Typed("#typed-content", {
+  strings: ["", "Search by name", "Search by attribute", "Search by photo"],
+  typeSpeed: 100,
+  smartBackspace: true,
+  backSpeed: 100,
+  loop: true,
+  showCursor: false
+});
+
+// const typed = new Typed('.banner-content', {
+//   stringsElement: '#typed-content',
+//   typeSpeed: 10
+// });
+
+// const element = document.querySelector("#typed-content");
+
+</script>
