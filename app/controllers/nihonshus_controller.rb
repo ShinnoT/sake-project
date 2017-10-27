@@ -25,9 +25,10 @@ class NihonshusController < ApplicationController
   end
 
   def get_barcode
-    @nihonshu = Nihonshu.find_or_initialize_by(upc: params[:upc])
+    @nihonshu = Nihonshu.find_or_initialize_by(sku: params[:sku])
+    print @nihonshu
     unless @nihonshu.new_record?
-      redirect_to @nihonshu
+      redirect_to nihonshu_path(@nihonshu)
     else
       redirect_to root_path
     end
