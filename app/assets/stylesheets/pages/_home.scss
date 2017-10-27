@@ -1,1 +1,95 @@
-// Specific CSS for your home-page
+.banner-search {
+  background-color: #F25858;
+  color: white;
+  text-align: center;
+  background-size: cover !important;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  padding: 50px 5px;
+}
+
+.search-attributes {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.banner-search  p{
+  color: #F25858;
+  padding: 10px 0;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.search-scan {
+  text-align: center;
+}
+.search-scan img {
+
+  height: 100px;
+  margin: 20px;
+
+}
+
+.search-all {
+  text-align: center;
+  margin: 20px;
+}
+
+.price-range,
+.rating,
+.taste,
+.show {
+  padding: 10px 20px;
+  flex-basis: 100%;
+}
+
+.price-range,
+.rating,
+.taste {
+  height: 160px;
+}
+
+@media all and (min-width: 700px) {
+  .price-range,
+  .rating,
+  .taste,
+  .show {
+    flex-basis: 25%;
+  }
+}
+
+.rating{
+border-bottom: solid 1px #b2b2b2;
+border-top: solid 1px #b2b2b2;
+}
+
+.taste{
+border-bottom: solid 1px #b2b2b2;
+}
+
+.show {
+padding: 10px 0;
+}
+
+
+
