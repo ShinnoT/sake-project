@@ -62,7 +62,10 @@
 
     <div class="search-scan"> <!-- SEARCH BY SCAN -->
       <h2>Or scan your bottle</h2>
-    <img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me">
+      <a href="#barcode-scanner">
+        <img class="scan-button" src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me">
+      </a>
+      <div id='barcode-scanner'></div>
     </div>
 
   </div>
@@ -143,11 +146,13 @@
 
 
 <div class="container">
+
 <div id='barcode-scanner'>
 
 <!-- <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %> -->
 
 </div>
+
 
     <a href="#" class="btn-treehouse"> show sake</a>
   </div>
