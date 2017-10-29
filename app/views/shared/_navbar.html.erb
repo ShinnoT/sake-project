@@ -8,20 +8,21 @@
 
   <!-- Right Navigation -->
   <div class="right-part">
-    <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+    <div class="search-right-part">
       <div>
         <%= form_tag(search_path, method: :get, class: "navbar-form")  do %>
         <%= text_field_tag :search, params[:search], class:"search-bar", placeholder: "Chozo, doburoku, etc."%>
         <%#= submit_tag 'Search', name: nil, class: "search-button search-button-banner"%>
         <% end %>
       </div>
-
-
       <a href="#" id="search-icon"><i class="fa fa-search"></i></a>
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
-      <% if user_signed_in? %>
+
+
+        <% if user_signed_in? %>
+
 
       <!-- Links when logged in -->
       <%#= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
@@ -56,6 +57,7 @@
     <!-- Login link (when logged out) -->
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

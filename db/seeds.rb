@@ -41,9 +41,35 @@ barcode = []
   barcode = []
 end
 
+sake = Nihonshu.create(    
+  name: Faker::Coffee.blend_name,   
+  acidity: scale.sample,    
+   taste: scale.sample,    
+   body: scale.sample,   
+   region: region.sample,    
+   price: price.sample,    
+   temp: temp.sample,    
+   sku: "5901234123457",   
+   classification: "rice",   
+   aroma: aroma.sample)    
+
+sake = Nihonshu.create(    
+  name: Faker::Coffee.blend_name,   
+  acidity: scale.sample,    
+   taste: scale.sample,    
+   body: scale.sample,   
+   region: region.sample,    
+   price: price.sample,    
+   temp: temp.sample,    
+   sku: "4902102061582",   
+   classification: "rice",   
+   aroma: aroma.sample)   
+ 
+
 puts 'Creating nihonshus!'
 
 new_user = User.create(email: "test@gmail.com", password: "123456")
+
 
 # 12.times do
 #   User.create(
