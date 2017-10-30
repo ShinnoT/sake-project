@@ -7,8 +7,15 @@ class Nihonshu < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
 
-  def self.search(query)
-    where("name LIKE ?", "%#{query}%")
-  end
+  def self.search(query_taste, query_price1, query_price2, query_rating)
+    # join 2 tables(Nihonshu,Review)
+    join_table = Nihonshu.joins("LEFT OUTER JOIN reviews on reviews.nihonshu_id = nihonshus.id")
 
+    # define a scope by rating
+    select_rating = join_table.select("nihonshus.*, AVG(reviews.rating) as rating_average").group('nihonshus.id').having('AVG(reviews.rating) >= ?', query_rating)
+
+    # search by rating, by taste, by price
+    select_rating.where("taste = ?", "#{query_taste}")
+    .where("price BETWEEN ? AND ?", "#{query_price1}", "#{query_price2}")
+  end
 end
