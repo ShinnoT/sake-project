@@ -1,0 +1,11 @@
+<h1>User profile</h1>
+
+<ul>
+  <% if @nihonshus.empty? %>
+    <p>You have no saved Sakes...</p>
+  <% else %>
+    <% @nihonshus.each do |nihonshu| %>
+      <li><%= nihonshu.name %></li>
+    <% end %>
+  <% end %>
+</ul>

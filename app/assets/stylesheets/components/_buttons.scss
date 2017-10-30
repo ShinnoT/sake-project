@@ -14,3 +14,20 @@
   text-decoration: none;
   color: white;
 }
+
+#hide {
+  color: white;
+  background: none;
+  transition: background 0.3s ease;
+  font-family: Chivo, sans-serif;
+  border-width: 0px;
+
+}
+
+#show{
+  color: white;
+  background: none;
+  transition: background 0.3s ease;
+  font-family: Chivo, sans-serif;
+  border-width: 0px;
+}
