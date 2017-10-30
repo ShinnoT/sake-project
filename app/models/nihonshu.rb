@@ -15,12 +15,12 @@ class Nihonshu < ApplicationRecord
     select_rating = join_table.select("nihonshus.*, AVG(reviews.rating) as rating_average").group('nihonshus.id').having('AVG(reviews.rating) >= ?', query_rating)
 
     # search by rating, by taste, by price
-    select_rating.where("taste = ?", "#{query_taste}")
-    .where("price BETWEEN ? AND ?", "#{query_price1}", "#{query_price2}")
+    select_rating.where("taste >= ?", query_taste)
+    select_rating.where("price BETWEEN ? AND ?", query_price1, query_price2)
   end
 
   def self.search(query)
     # search by navbar
-    where("name = ?", "#{query}")
+    where("name ILIKE ?", "%#{query}%")
   end
 end
