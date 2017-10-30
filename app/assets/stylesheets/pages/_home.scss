@@ -67,7 +67,7 @@
 .price-range,
 .rating,
 .taste {
-  height: 160px;
+  height: 130px;
 }
 
 @media all and (min-width: 700px) {
@@ -93,4 +93,15 @@ padding: 10px 0;
 }
 
 
+.search-scan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
 
+.search-selection h3{
+color: grey;
+font-size: 30px;
+margin-left: 20px;
+}
