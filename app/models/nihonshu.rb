@@ -6,6 +6,7 @@ class Nihonshu < ApplicationRecord
   validates :temp, inclusion: { in: ["hot", "warm", "cold"] }
 
   has_many :reviews, dependent: :destroy
+  has_many :savings
 
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
