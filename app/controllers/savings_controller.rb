@@ -6,12 +6,14 @@ class SavingsController < ApplicationController
 
   def create
     @saving = Saving.new
+    @review = Review.new
     @nihonshu = Nihonshu.find(params[:nihonshu_id])
     @saving.nihonshu = @nihonshu
     @saving.user = current_user
     if @saving.save
       redirect_to user_path(current_user)
     else
+      # flash[:alert] = "Cant save Sake. Already saved!"
       render 'nihonshus/show'
     end
   end
