@@ -29,7 +29,6 @@ def show
   @nihonshu = Nihonshu.find(params[:id])
   @review = Review.new
 end
->>>>>>> master
 
   def show
     @nihonshu = Nihonshu.find(params[:id])
