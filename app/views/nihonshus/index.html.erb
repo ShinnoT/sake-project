@@ -1,20 +1,29 @@
 <!-- NAVBAR -->
 
   <div class="banner-search" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= asset_path "UnderstandingSake.jpg" %>');">
-    <div class="banner" >
+
       <div class="banner-content">
         <h1>Find your Sake bottle with style!</h1>
         <div style="height: 60px; width: 100%; font-size: 30px;" id="typed-content">
 
         </div>
         <!-- <span id="typed"></span> -->
-      <div class="search-all">
-      <a href="#" class="btn btn-treehouse"> show all sake</a>
-    </div>
-    </div>
-    </div>
 
-    <div class="search-attributes"> <!-- SEARCH BY ATTRIBUTES -->
+
+         <!-- <div class="search-all">
+            <a href="#" class="btn btn-treehouse"> Show all sake</a>
+          </div> -->
+
+          <div class="search-scan"> <!-- SEARCH BY SCAN -->
+           <a href="#barcode-scanner"></a>
+            <a href="#" class="btn btn-treehouse"> Scan your bottle </a>
+          </div>
+           <!--<img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me"> -->
+
+           <div id="barcode-scanner"><video autoplay="true" preload="auto" src=""></video></div>
+
+
+    <div class="search-attributes">
          <div class="price-range">
             <p>Price range</p>
             <section class="range-slider">
@@ -51,21 +60,13 @@
                 <li>Dry</li>
               </ul>
           </div>
-
           <div class="show">
-            <a href="#" class="btn btn-treehouse"> show sake</a>
+            <a href="#" class="btn btn-treehouse"> Show sake</a>
           </div>
-
-
-    </div>
-
-
-    <div class="search-scan"> <!-- SEARCH BY SCAN -->
-      <h2>Or scan your bottle</h2>
-    <img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me">
     </div>
 
   </div>
+</div>
   <div class="search-selection">  <!-- SELECTION -->
     <h3>Discover our selections</h3>
     <div class="container">
@@ -75,7 +76,7 @@
             <div class="card-category">Popular</div>
             <div class="card-description">
               <h2>Sake selection below Y1000</h2>
-              <p>nice deal!</p>
+              <p>Nice deal!</p>
             </div>
               <a class="card-link" href="#" ></a>
           </div>
@@ -85,7 +86,7 @@
             <div class="card-category">Popular</div>
             <div class="card-description">
               <h2>Sake selection below Y1000</h2>
-              <p>nice deal!</p>
+              <p>Nice deal!</p>
             </div>
               <a class="card-link" href="#" ></a>
           </div>
@@ -95,7 +96,7 @@
             <div class="card-category">Popular</div>
             <div class="card-description">
               <h2>Sake selection below Y1000</h2>
-              <p>nice deal!</p>
+              <p>Nice deal!</p>
             </div>
               <a class="card-link" href="#" ></a>
           </div>
@@ -103,7 +104,7 @@
       </div>
     </div>
   </div>
-  <div class="search-selection">  <!-- SELECTION -->
+  <div class="search-selection">
     <h3>Popular reservations around the world</h3>
     <div class="container">
       <div class="row">
@@ -112,7 +113,7 @@
             <div class="card-category">Popular</div>
             <div class="card-description">
               <h2>Sake A </h2>
-              <p>nice price!</p>
+              <p>Nice price!</p>
             </div>
               <a class="card-link" href="#" ></a>
           </div>
@@ -122,7 +123,7 @@
             <div class="card-category">Popular</div>
             <div class="card-description">
               <h2>Sake B</h2>
-              <p>nice taste!</p>
+              <p>Nice taste!</p>
             </div>
               <a class="card-link" href="#" ></a>
           </div>
@@ -132,7 +133,7 @@
             <div class="card-category">Popular</div>
             <div class="card-description">
               <h2>Sake C</h2>
-              <p>nice rating!</p>
+              <p>Nice rating!</p>
             </div>
               <a class="card-link" href="#" ></a>
           </div>
@@ -141,15 +142,9 @@
     </div>
   <!-- </div> -->
 
-
-<div class="container">
-<div id='barcode-scanner'>
-
-<%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
-
-</div>
-
-    <a href="#" class="btn-treehouse"> show sake</a>
+  </div>
+  <div class="content">
+  <a href="#" class=" btn btn-treehouse"> Show sake</a>
   </div>
 </div>
 
@@ -214,3 +209,17 @@ const typed = new Typed("#typed-content", {
 // const element = document.querySelector("#typed-content");
 
 </script>
+
+
+  <!--   <div class="search-scan">
+      <a href="#barcode-scanner"></a>
+      <div id="barcode-scanner"><video autoplay="true" preload="auto" src=""></video></div>
+    </div>
+
+-->
+
+
+
+
+
+
