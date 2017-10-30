@@ -20,7 +20,6 @@ def show
   @review = Review.new
 end
 
-
 def get_barcode
   @nihonshu = Nihonshu.find_or_initialize_by(sku: params[:sku])
   print @nihonshu
