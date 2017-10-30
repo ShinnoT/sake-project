@@ -122,6 +122,8 @@
       </div>
     </div>
 
+
+
     <div class="col-sm-6">
       <div class="summary">
         <h2>Summary</h2>
@@ -160,7 +162,30 @@
       </div>
     </div>
 
+
+
     <div class="col-sm-12">
+      <div class="reviews-container">
+        <h2>Reviews</h2>
+        <div id="reviews">
+          <% if @nihonshu.reviews.blank? %>
+            <p>Be the first to review!</p>
+          <% else %>
+            <% @nihonshu.reviews.each do |review| %>
+              <%= render 'reviews/show', review: review %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="review-form" style="padding: 15px;">
+        <%= render 'reviews/form', nihonshu: @nihonshu, review: @review %>
+      </div>
+    </div>
+
+<!--     <div class="col-sm-12">
       <div class="reviews-container">
         <h2>Reviews</h2>
         <div class="row">
@@ -199,7 +224,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>
