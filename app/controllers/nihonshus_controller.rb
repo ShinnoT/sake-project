@@ -11,21 +11,9 @@ class NihonshusController < ApplicationController
 end
 
 def search
-    #@nihonshus = Nihonshu.all
+    # search by price&taste&rating
+    @nihonshus = Nihonshu.search(params[:query_taste], params[:query_price1], params[:query_price2], params[:query_rating])
 
-    # search by price&taste
-    include PgSearch
-    scope :sorted, ->{ order(price: :asc) }
-    @result = pg_search_scope :search_by_taste_and_price_and_rating, against: [ :taste, :price, :rating]
-
-    # search all
-    @nihonshus = Nihonshu.search(params[:search])
-    # @nihonshus =
-    # unless search_params.empty?
-    #   Nihonshu.search(search_params)
-    # else
-    #   nil
-    # end
   end
 
   def show

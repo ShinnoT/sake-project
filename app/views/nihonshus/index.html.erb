@@ -24,47 +24,49 @@
       </div>
 
     <div class="search-attributes">
-         <div class="price-range">
-            <p>Price range</p>
-            <section class="range-slider">
-              <input value="100" min="100" max="10000" step="100" type="range">
-              <input value="10000" min="100" max="10000" step="100" type="range">
-              <span class="rangeValues"></span>
+      <form action="/search" method="get">
+        <div class="price-range">
+          <p>Price range</p>
+          <section class="range-slider">
+            <input name="query_price1" value="100" min="100" max="10000" step="100" type="range">
+            <input name="query_price2" value="10000" min="100" max="10000" step="100" type="range">
+            <span class="rangeValues"></span>
           </section>
         </div>
 
-          <div class="rating">
-            <p>Rating</p>
-              <div class="range">
-              <input type="range" min="1" max="5" steps="1" value="1">
-              </div>
-              <ul class="range-labels">
-                <li class="active selected">1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-              </ul>
+        <div class="rating">
+          <p>Rating</p>
+          <div class="range">
+            <input name="query_rating" type="range" min="1" max="5" steps="1" value="1">
           </div>
+          <ul class="range-labels">
+            <li class="active selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </div>
 
-          <div class="taste">
-            <p>Taste</p>
-            <div class="range">
-              <input type="range" min="1" max="5" steps="1" value="1">
-              </div>
-              <ul class="range-labels">
-                <li class="active selected">Sweet</li>
-                <li>-</li>
-                <li>Neutral</li>
-                <li>-</li>
-                <li>Dry</li>
-              </ul>
-          </div>
-          <div class="show">
-            <a href="#" class="btn btn-treehouse"> Show sake</a>
-          </div>
+        <div class="taste">
+          <p>Taste</p>
+          <div class="range">
+            <input name="query_taste" type="range" min="1" max="5" steps="1" value="1">
+            </div>
+            <ul class="range-labels">
+              <li class="active selected">Sweet</li>
+              <li>-</li>
+              <li>Neutral</li>
+              <li>-</li>
+              <li>Dry</li>
+            </ul>
+        </div>
+        <div class="show">
+          <input type="submit" value="Show sake" class="btn btn-treehouse">
+        </div>
+      </form>
+
     </div>
-
   </div>
 </div>
   <div class="search-selection">  <!-- SELECTION -->

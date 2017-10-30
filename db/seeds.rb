@@ -8,11 +8,12 @@
 
 
 Nihonshu.destroy_all
+Review.destroy_all
 
 region = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","roppongi"]
 temp = ["hot", "warm","cold"]
 photos = []
-price = [12.00, 5.32, 34.55, 6.45]
+price = [1200, 5000, 3000, 1000]
 scale = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 aroma = ["flowery", "pungent", "sharp"]
 
@@ -41,35 +42,39 @@ barcode = []
   barcode = []
 end
 
-sake = Nihonshu.create(    
-  name: Faker::Coffee.blend_name,   
-  acidity: scale.sample,    
-   taste: scale.sample,    
-   body: scale.sample,   
-   region: region.sample,    
-   price: price.sample,    
-   temp: temp.sample,    
-   sku: "5901234123457",   
-   classification: "rice",   
-   aroma: aroma.sample)    
+sake = Nihonshu.create(
+  name: Faker::Coffee.blend_name,
+  acidity: scale.sample,
+   taste: scale.sample,
+   body: scale.sample,
+   region: region.sample,
+   price: price.sample,
+   temp: temp.sample,
+   sku: "5901234123457",
+   classification: "rice",
+   aroma: aroma.sample)
 
-sake = Nihonshu.create(    
-  name: Faker::Coffee.blend_name,   
-  acidity: scale.sample,    
-   taste: scale.sample,    
-   body: scale.sample,   
-   region: region.sample,    
-   price: price.sample,    
-   temp: temp.sample,    
-   sku: "4902102061582",   
-   classification: "rice",   
-   aroma: aroma.sample)   
- 
+sake = Nihonshu.create(
+  name: Faker::Coffee.blend_name,
+  acidity: scale.sample,
+   taste: scale.sample,
+   body: scale.sample,
+   region: region.sample,
+   price: price.sample,
+   temp: temp.sample,
+   sku: "4902102061582",
+   classification: "rice",
+   aroma: aroma.sample)
+
 
 puts 'Creating nihonshus!'
 
 new_user = User.create(email: "test@gmail.com", password: "123456")
 
+new_review = Review.create(
+   title: "aaa",
+   description: "bbb",
+   rating: 3)
 
 # 12.times do
 #   User.create(
