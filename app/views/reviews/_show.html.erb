@@ -1,0 +1,10 @@
+<div class="single-review">
+  <h3><%= review.title %> by <%= review.user.email %></h3>
+  <% review.rating.to_i.times do %>
+    <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
+  <% end %>
+  <% (5 - review.rating.to_i).times do %>
+   <i class="fa fa-star star" aria-hidden="true"></i>
+  <% end %>
+  <p><%= review.description %></p>
+</div>

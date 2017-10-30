@@ -1,0 +1,11 @@
+// throw new Error('Heeey!'); <--- francisco comment
+
+const newReviewForm = document.querySelector('#new_review');
+<% if @review.errors.any? %>
+  newReviewForm.innerHTML = "<%= j render 'reviews/form', nihonshu: @nihonshu, review: @review %>";
+<% else %>
+  const reviews = document.querySelector('#reviews');
+  reviews.insertAdjacentHTML("beforeend", "<%= j render 'reviews/show', review: @review %>");
+  newReviewForm.innerHTML = "<%= j render 'reviews/form', nihonshu: @nihonshu, review: Review.new %>";
+  newReviewForm.reset();
+<% end %>
