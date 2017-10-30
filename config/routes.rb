@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   resources :nihonshus, only: [:show, :new, :create] do
     post :get_barcode, on: :collection
     resources :reviews
+    get 'comparisons/by_id', to: 'comparisons#show'
     resources :comparisons, only: :show
   end
+
   resources :users, only: [ :show ] do
     resources :reviews
   end
