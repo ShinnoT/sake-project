@@ -65,7 +65,7 @@ const load_quagga = () => {
   }
 }
 
-$('.scan-button').click(e => {
+$('.search-scan').click(e => {
   $(e.currentTarget).remove();
   load_quagga();
 });

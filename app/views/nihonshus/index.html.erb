@@ -8,20 +8,20 @@
 
         </div>
         <!-- <span id="typed"></span> -->
-      <div class="search-scan">
 
-          <div class="search-all">
+
+         <!-- <div class="search-all">
             <a href="#" class="btn btn-treehouse"> Show all sake</a>
+          </div> -->
+
+          <div class="search-scan"> <!-- SEARCH BY SCAN -->
+           <a href="#barcode-scanner"></a>
+            <a href="#" class="btn btn-treehouse"> Scan your bottle </a>
           </div>
+           <!--<img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me"> -->
 
+           <div id="barcode-scanner"><video autoplay="true" preload="auto" src=""></video></div>
 
-            <div class="search-scan"> <!-- SEARCH BY SCAN -->
-              <a href="#" class="btn btn-treehouse"> Scan your bottle </a>
-              <!-- <img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me"> -->
-
-          </div>
-
-      </div>
 
     <div class="search-attributes">
       <form action="/search" method="get">
@@ -144,18 +144,9 @@
     </div>
   <!-- </div> -->
 
-
-<div class="container">
-
-<div id='barcode-scanner'>
-
-<!-- <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %> -->
-
-</div>
-
-<a href="#" class="btn-treehouse"> Show sake</a>
-
-
+  </div>
+  <div class="content">
+  <a href="#" class=" btn btn-treehouse"> Show sake</a>
   </div>
 </div>
 
@@ -220,3 +211,17 @@ const typed = new Typed("#typed-content", {
 // const element = document.querySelector("#typed-content");
 
 </script>
+
+
+  <!--   <div class="search-scan">
+      <a href="#barcode-scanner"></a>
+      <div id="barcode-scanner"><video autoplay="true" preload="auto" src=""></video></div>
+    </div>
+
+-->
+
+
+
+
+
+
