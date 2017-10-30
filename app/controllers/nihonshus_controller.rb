@@ -11,10 +11,14 @@ class NihonshusController < ApplicationController
 end
 
 def search
-    # search by price&taste&rating
-    @nihonshus = Nihonshu.search(params[:query_taste], params[:query_price1], params[:query_price2], params[:query_rating])
+  # search by price&taste&rating
+  @nihonshus = Nihonshu.search(params[:query_taste], params[:query_price1], params[:query_price2], params[:query_rating])
+end
 
-  end
+def show
+  @nihonshu = Nihonshu.find(params[:id])
+  @review = Review.new
+end
 
   def show
     @nihonshu = Nihonshu.find(params[:id])
