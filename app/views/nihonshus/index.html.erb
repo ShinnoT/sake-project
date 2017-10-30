@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 
-  <div class="banner-search" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.ciawine.com/wp-content/uploads/2014/10/UnderstandingSake.jpg');">
+  <div class="banner-search" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= asset_path "UnderstandingSake.jpg" %>');">
     <div class="banner" >
       <div class="banner-content">
         <h1>Find your Sake bottle with style!</h1>
@@ -62,7 +62,10 @@
 
     <div class="search-scan"> <!-- SEARCH BY SCAN -->
       <h2>Or scan your bottle</h2>
-    <img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me">
+      <a href="#barcode-scanner">
+        <img class="scan-button" src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me">
+      </a>
+      <div id='barcode-scanner'></div>
     </div>
 
   </div>
@@ -103,7 +106,7 @@
       </div>
     </div>
   </div>
-  <div class="search-selection">  <!-- SELECTION -->
+  <div class="search-selection">
     <h3>Popular reservations around the world</h3>
     <div class="container">
       <div class="row">
@@ -143,11 +146,13 @@
 
 
 <div class="container">
+
 <div id='barcode-scanner'>
 
-<%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
+<!-- <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %> -->
 
 </div>
+
 
     <a href="#" class="btn-treehouse"> show sake</a>
   </div>
