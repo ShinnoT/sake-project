@@ -1,19 +1,28 @@
 class NihonshusController < ApplicationController
  skip_before_action :authenticate_user!, only: [:index, :search]
 
- def index
-  @nihonshus =
-  if search_params
-    redirect_to search_path(resource_object, search: search_params)
-  else
-    nil
+  def index
+    @nihonshus =
+    if search_params
+      redirect_to search_path(resource_object, search: search_params)
+    else
+      nil
+    end
   end
-end
 
-def search
+  def search_attr
     # search by price&taste&rating
-    @nihonshus = Nihonshu.search(params[:query_taste], params[:query_price1], params[:query_price2], params[:query_rating])
+    @nihonshus = Nihonshu.search_attr(params[:query_taste], params[:query_price1], params[:query_price2], params[:query_rating])
+  end
 
+  def search
+    # search by navbar
+    @nihonshus =
+    unless search_params.empty?
+      Nihonshu.search(search_params)
+    else
+      nil
+    end
   end
 
   def show
