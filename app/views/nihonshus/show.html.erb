@@ -110,6 +110,18 @@
         <div class="show-button">
           <a href="#" class="btn btn-primary more-button">Buy Sake</a>
         </div>
+
+
+
+        <%= simple_form_for [@nihonshu, @saving] do |f| %>
+          <%#= f.button :submit %>
+          <%= f.submit 'Save' %>
+        <% end %>
+
+
+
+
+
         <div class="info">
           <p><strong id="rating-integer">4.7</strong>
             <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
@@ -228,4 +240,17 @@
 
   </div>
 </div>
+
+
+<form method='get' action='/nihonshus/37/comparisons/by_id'>
+<select name='id'>
+  <option value='32'>Foo sake</option>
+  <option value='33'>Bar sake</option>
+</select>
+<input type="submit" value="Compare">
+</form>
+
+
+<!-- <a href="/nihonshus/params[:nihonshu_id]/comparisons/params[:id]" class="show-button"> Compare</a> -->
+
 
