@@ -19,20 +19,20 @@ def search
   def show
     @nihonshu = Nihonshu.find(params[:id])
     @review = Review.new
+    @saving = Saving.new
   end
 
   def get_barcode
-     @nihonshu = Nihonshu.find_or_initialize_by(sku: params[:sku])
-     print @nihonshu
-     unless @nihonshu.new_record?
-       # redirect_to nihonshu_path(@nihonshu)
+    @nihonshu = Nihonshu.find_or_initialize_by(sku: params[:sku])
+    print @nihonshu
+    unless @nihonshu.new_record?
+      # redirect_to nihonshu_path(@nihonshu)
       render json: {target_url: nihonshu_path(@nihonshu)}
-     else
+    else
       # redirect_to user_path(current_user)
       render json: {target_url: root_path}
-     end
-   end
-
+    end
+  end
 
   private
 

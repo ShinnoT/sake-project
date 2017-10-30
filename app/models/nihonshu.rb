@@ -6,6 +6,7 @@ class Nihonshu < ApplicationRecord
   validates :temp, inclusion: { in: ["hot", "warm", "cold"] }
 
   has_many :reviews, dependent: :destroy
+  has_many :savings
 
   def self.search(query_taste, query_price1, query_price2, query_rating)
     # join 2 tables(Nihonshu,Review)
