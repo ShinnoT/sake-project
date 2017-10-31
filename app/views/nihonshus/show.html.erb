@@ -108,19 +108,25 @@
           <%= @nihonshu.name %>
         </div>
         <div class="show-button">
-          <a href="#" class="btn btn-primary more-button">Buy Sake</a>
+          <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name%>/" class="btn btn-primary more-button">Buy</a>
+          <a href="#" class="btn btn-primary more-button">Save</a>
+          <p></p>
+          <a href="#" class="btn btn-primary more-button">Compare</a>
         </div>
 
+        <form method='get' action= <%= nihonshu_comparisons_by_id_path(@nihonshu.id)%>>
+        <select name='id'>
+          <option value='32'> Bar Sake</option>
+          <option value='33'>Bar sake</option>
+        </select>
+        <input type="submit" value="Compare">
+        </form>
 
 
         <%= simple_form_for [@nihonshu, @saving] do |f| %>
           <%#= f.button :submit %>
           <%= f.submit 'Save' %>
         <% end %>
-
-
-
-
 
         <div class="info">
           <p><strong id="rating-integer">4.7</strong>
@@ -142,33 +148,49 @@
         <div class="row">
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Factory name:</p>
-           
-            </div>
-          </div>
-          <div class="col-xs-6">
-            <div class="col-margins">
-              <p>Region: <%= @nihonshu.region%> </p>
+              <p>Region: <%= @nihonshu.region.capitalize%> </p>
             
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Rice type:</p>
+              <p>Avg. Price: ¥ <%= @nihonshu.price %></p>
             
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Food pairing:</p>
-             
+              <p>Food Pairs: <% if @nihonshu.taste <= 2%>Fish</p> 
+              <% elsif @nihonshu.taste == 3 %>Goat</p>
+              <% else %>Duck</p>
+              <%end%>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Taste: <%= @nihonshu.taste%></p>
+              <p>Classification: <%= @nihonshu.classification.capitalize %></p>
             </div>
           </div>
+          <div class="col-xs-6">
+            <div class="col-margins">
+              <p>Aroma: <%= @nihonshu.aroma.capitalize%></p>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="col-margins">
+            <% if @nihonshu.taste == 1 %></p>
+              <p>Taste: Very Sweet </p>
+            <% elsif @nihonshu.taste == 2 %>
+              <p>Taste: Sweet </p>
+            <% elsif @nihonshu.taste == 3 %>
+              <p>Taste: Neutral </p>
+            <% elsif @nihonshu.taste == 4 %>
+              <p>Taste: Dry </p>
+            <%else%>
+              <p> Taste: Very Dry </p>
+            <%end%>
+            </div>
+          </div >
         </div>
       </div>
     </div>
@@ -241,12 +263,7 @@
 </div>
 
 
-<form method='get' action= <%= nihonshu_comparisons_by_id_path(@nihonshu.id)%>>
-<select name='id'>
-  <option value='32'>Foo sake</option>
-  <option value='33'>Bar sake</option>
-</select>
-<input type="submit" value="Compare">
-</form>
+
+
 
 
