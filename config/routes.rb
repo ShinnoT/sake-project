@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'nihonshus#index'
   get '/search', to: 'nihonshus#search', as: 'search'
+  get '/search_attr', to: 'nihonshus#search_attr', as: 'search_attr'
   # get '/search/(:sake1)/(:sake2)', to: 'comparisons#show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :nihonshus, only: [:show, :new, :create] do
@@ -16,5 +18,5 @@ Rails.application.routes.draw do
     resources :savings, only: [ :new, :create ]
   end
 
-  resources :users, only: :show 
+  resources :users, only: :show
 end

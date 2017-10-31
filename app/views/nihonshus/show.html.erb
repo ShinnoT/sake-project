@@ -242,7 +242,7 @@
 </div>
 
 
-<form method='get' action='/nihonshus/37/comparisons/by_id'>
+<form method='get' action= <%= nihonshu_comparisons_by_id_path(@nihonshu.id)%>>
 <select name='id'>
   <option value='32'>Foo sake</option>
   <option value='33'>Bar sake</option>
@@ -250,7 +250,5 @@
 <input type="submit" value="Compare">
 </form>
 
-
-<!-- <a href="/nihonshus/params[:nihonshu_id]/comparisons/params[:id]" class="show-button"> Compare</a> -->
 
 
