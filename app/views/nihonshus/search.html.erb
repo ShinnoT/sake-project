@@ -4,13 +4,14 @@
  <div class="searchpage-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.ciawine.com/wp-content/uploads/2014/10/UnderstandingSake.jpg');">
 </div>
 
-<div class="summary">
+<div class="container">
+<!-- <div class="summary">
   <p> Showing XXX Sake bottle </p>
   <p> Between Y1500 - Y6000 rated </p>
   <p> Above 3.5 stars </p>
-</div>
+</div> -->
 
-<div class="container">
+
 
   <div class="row">
     <% @nihonshus.each do |nihonshu| %>
@@ -30,7 +31,5 @@
     <% end %>
   </div>
 </div>
-    <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
 
-  </div>
-</div>
+  <!--  <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>  -->
