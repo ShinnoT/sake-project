@@ -21,14 +21,9 @@ class NihonshusController < ApplicationController
     unless search_params.empty?
       Nihonshu.search(search_params)
     else
-      nil
+      Nihonshu.all
     end
   end
-
-def show
-  @nihonshu = Nihonshu.find(params[:id])
-  @review = Review.new
-end
 
   def show
     @nihonshu = Nihonshu.find(params[:id])
