@@ -10,6 +10,9 @@
     width: auto;
     height: 200px;
   }
+  .text-card {
+
+  }
   @media only screen and (max-width : 600px) {
     .show-container {
       /*background-color: blue;*/
@@ -121,8 +124,6 @@
           </a>
         </div>
 
-
-
         <div class="info">
           <p><strong id="rating-integer">4.7</strong>
             <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
@@ -141,44 +142,52 @@
         <div class="row">
           <div class="col-xs-6">
             <div class="col-margins">
+              <div class="text-card">
               <p>Region: <%= @nihonshu.region.capitalize%> </p>
+              </div>
             
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
+            <div class="text-card">
               <p>Avg. Price: ¥ <%= @nihonshu.price %></p>
-            
+            </div>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Food Pairs: <% if @nihonshu.taste <= 2%>Fish</p> 
-              <% elsif @nihonshu.taste == 3 %>Goat</p>
-              <% else %>Duck</p>
+
+              <p><div class="text-card">Food Pairs: </div><% if @nihonshu.taste <= 2%><div class="text-card">Fish</div></p> 
+              <% elsif @nihonshu.taste == 3 %><div class="text-card">Goat</div></p>
+              <% else %><div class="text-card">Duck</div></p>
               <%end%>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
+            <div class="text-card">
               <p>Classification: <%= @nihonshu.classification.capitalize %></p>
+            </div>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
+            <div class="text-card">
               <p>Aroma: <%= @nihonshu.aroma.capitalize%></p>
+            </div>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
             <% if @nihonshu.taste == 1 %></p>
-              <p>Taste: Very Sweet </p>
+              <p><div class="text-card">Taste: Very Sweet</div></p>
             <% elsif @nihonshu.taste == 2 %>
-              <p>Taste: Sweet </p>
+              <p><div class="text-card">Taste: Sweet</div></p>
             <% elsif @nihonshu.taste == 3 %>
-              <p>Taste: Neutral </p>
+              <p><div class="text-card">Taste: Neutral</div></p>
             <% elsif @nihonshu.taste == 4 %>
-              <p>Taste: Dry </p>
+              <p><div class="text-card">Taste: Dry </div></p>
             <%else%>
               <p> Taste: Very Dry </p>
             <%end%>
