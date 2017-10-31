@@ -28,6 +28,17 @@ class NihonshusController < ApplicationController
         nil
       end
     end
+
+# NEEEMAAAA
+    # @nihonshus = Nihonshu.all
+    # @nihonshus =
+    # if search_params
+    #   redirect_to search_path(resource_object, search: search_params)
+    # else
+    #   nil
+    # end
+# NEEEEEMAAAAA
+
   end
 
   def search_attr
