@@ -68,9 +68,13 @@
 
 
   const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'horizontalBar',
     data: data,
     options: {
+      animation: {
+        duration: 5000,
+        easing: 'easeInOutExpo'
+      },
       barValueSpacing: 20,
       scales: {
         yAxes: [{
