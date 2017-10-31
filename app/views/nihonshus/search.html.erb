@@ -1,18 +1,23 @@
 
- <div class="banner-search" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.ciawine.com/wp-content/uploads/2014/10/UnderstandingSake.jpg');">
 
-  <div class="banner" >
-     <div class="banner-content">
-      <p>here you are! :-) </p>
-    </div>
-  </div>
+
+ <div class="searchpage-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.ciawine.com/wp-content/uploads/2014/10/UnderstandingSake.jpg');">
 </div>
 
 <div class="container">
+<!-- <div class="summary">
+  <p> Showing XXX Sake bottle </p>
+  <p> Between Y1500 - Y6000 rated </p>
+  <p> Above 3.5 stars </p>
+</div> -->
+
+
+
   <div class="row">
     <% @nihonshus.each do |nihonshu| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/736x/64/22/89/642289e48c71b5f21e9e72a5d5c6d98c--label-design-package-design.jpg');">
+<!--         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/736x/64/22/89/642289e48c71b5f21e9e72a5d5c6d98c--label-design-package-design.jpg');">  -->
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= nihonshu.image_url %>);">
           <div class="card-category">Popular</div>
           <div class="card-description">
             <h2>
@@ -28,7 +33,5 @@
    <% else %>
   </div>
 </div>
-    <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
 
-  </div>
-</div>
+  <!--  <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>  -->
