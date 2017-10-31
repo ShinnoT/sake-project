@@ -7,8 +7,8 @@
     overflow: hidden;
   }
   .sake-pic > img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 200px;
   }
   @media only screen and (max-width : 600px) {
     .show-container {
@@ -22,10 +22,11 @@
       font-weight: bolder;
     }
     .show-button {
-      padding-bottom: 20px;
+      padding-bottom: 10px;
+
     }
     .more-button {
-      width: 200px;
+      width: 100px;
       height: 30px;
       font-size: 15px;
       padding: 2px;
@@ -110,24 +111,17 @@
         </div>
         <div class="show-button">
           <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name%>/" class="btn btn-primary more-button">Buy</a>
-          <a href="#" class="btn btn-primary more-button">Save</a>
-          <p></p>
           <a href="#" class="btn btn-primary more-button">Compare</a>
+          <p></p>
+          <a>
+            <%= simple_form_for [@nihonshu, @saving] do |f| %>
+              <%#= f.button :submit %>
+              <%= f.submit 'Save', { class: 'btn btn-primary more-button' } %>
+            <% end %>
+          </a>
         </div>
 
-        <form method='get' action= <%= nihonshu_comparisons_by_id_path(@nihonshu.id)%>>
-        <select name='id'>
-          <option value='32'> Bar Sake</option>
-          <option value='33'>Bar sake</option>
-        </select>
-        <input type="submit" value="Compare">
-        </form>
 
-
-        <%= simple_form_for [@nihonshu, @saving] do |f| %>
-          <%#= f.button :submit %>
-          <%= f.submit 'Save' %>
-        <% end %>
 
         <div class="info">
           <p><strong id="rating-integer">4.7</strong>
@@ -140,8 +134,6 @@
         </div>
       </div>
     </div>
-
-
 
     <div class="col-sm-6">
       <div class="summary">
