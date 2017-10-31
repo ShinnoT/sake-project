@@ -39,11 +39,11 @@ end
 puts 'Creating nihonshus!'
 
 # ---User---
-new_user = User.create(first_name: "sai", last_name: "tuv", email: "test@gmail.com", password: "123456")
-other_user = User.create(first_name: "whatever", last_name: "whatever", email: "blahblah@email.com", password: "123456")
-user1 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsfdf@email.com", password: "123456")
-user2 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahfrg@email.com", password: "123456")
-user3 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsrgrrg@email.com", password: "123456")
-user4 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahrgswefg@email.com", password: "123456")
+# new_user = User.create(first_name: "sai", last_name: "tuv", email: "test@gmail.com", password: "123456")
+# other_user = User.create(first_name: "whatever", last_name: "whatever", email: "blahblah@email.com", password: "123456")
+# user1 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsfdf@email.com", password: "123456")
+# user2 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahfrg@email.com", password: "123456")
+# user3 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsrgrrg@email.com", password: "123456")
+# user4 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahrgswefg@email.com", password: "123456")
 
 puts 'Creating users!'
