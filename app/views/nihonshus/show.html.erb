@@ -11,6 +11,7 @@
     height: 200px;
   }
   .text-card {
+    font-size: 12px;
 
   }
   @media only screen and (max-width : 600px) {
@@ -156,7 +157,7 @@
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p><div class="text-card">Food Pairs: </div><% if @nihonshu.taste <= 2%><div class="text-card">Fish</div></p>
+              <p><div class="text-card"><% if @nihonshu.taste <= 2%>Food Pairs: Fish</p></div>
               <% elsif @nihonshu.taste == 3 %><div class="text-card">Goat</div></p>
               <% else %><div class="text-card">Duck</div></p>
               <%end%>
