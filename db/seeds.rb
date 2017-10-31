@@ -74,7 +74,10 @@ new_user = User.create(email: "test@gmail.com", password: "123456")
 new_review = Review.create(
    title: "aaa",
    description: "bbb",
-   rating: 3)
+   rating: 3,
+   nihonshu: sake,
+   user: new_user
+   )
 
 # 12.times do
 #   User.create(
