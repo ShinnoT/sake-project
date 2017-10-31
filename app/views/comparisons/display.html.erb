@@ -10,33 +10,41 @@
 <p><%= @sake2.price %></p>
 
 
-<canvas id="myChart" width="500" height="600"></canvas>
+<p>--------rating---------</p>
+<p><%= @rating1 %></p>
+<p><%= @rating2 %></p>
+
+<div style="width: 400px; height: 600px;">
+  <canvas id="myChart" style="width: 100%; height: 100%;"></canvas>
+</div>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
 <script>
   // import Chart from 'chart.js';
-  // Chart.defaults.global.responsive = false;
+  Chart.defaults.global.responsive = false;
+  // FIREFOX DOESNT WORK WITH ES6 THATS WHY I USED VAR INSTEAD OF CONST OR LET HERE
   Chart.defaults.global.maintainAspectRatio = false;
 
   if (<%= @sake1.price.to_i %> > 1000) {
-    const price1 = (<%= @sake1.price.to_i %> / 1000);
+    var price1 = (<%= @sake1.price.to_i %> / 1000);
   } else if (<%= @sake1.price.to_i %> > 100) {
-    const price1 = (<%= @sake1.price.to_i %> / 100);
+    var price1 = (<%= @sake1.price.to_i %> / 100);
   } else if (<%= @sake1.price.to_i %> > 20) {
-    const price1 = (<%= @sake1.price.to_i %> / 10);
+    var price1 = (<%= @sake1.price.to_i %> / 10);
   } else {
-    const price1 = <%= @sake1.price.to_i %>;
+    var price1 = <%= @sake1.price.to_i %>;
   }
 
-  if (<%= @sake1.price.to_i %> > 1000) {
-    const price1 = (<%= @sake2.price.to_i %> / 1000);
+  if (<%= @sake2.price.to_i %> > 1000) {
+    var price2 = (<%= @sake2.price.to_i %> / 1000);
   } else if (<%= @sake2.price.to_i %> > 100) {
-    const price1 = (<%= @sake2.price.to_i %> / 100);
+    var price2 = (<%= @sake2.price.to_i %> / 100);
   } else if (<%= @sake2.price.to_i %> > 20) {
-    const price1 = (<%= @sake2.price.to_i %> / 10);
+    var price2 = (<%= @sake2.price.to_i %> / 10);
   } else {
-    const price1 = <%= @sake2.price.to_i %>;
+    var price2 = <%= @sake2.price.to_i %>;
   }
 
   const ctx = document.querySelector("#myChart");
@@ -47,12 +55,12 @@
       {
         label: "<%= @sake1.name %>",
         backgroundColor: "blue",
-        data: [<%= @sake1.price.to_i %>, 7, <%= @sake1.taste %>]
+        data: [price1, <%= @rating1 %>, <%= @sake1.taste %>]
       },
       {
         label: "<%= @sake2.name %>",
         backgroundColor: "red",
-        data: [<%= @sake2.price.to_i %>, 5, <%= @sake2.taste %>]
+        data: [price2, <%= @rating2 %>, <%= @sake2.taste %>]
       }
     ]
   };
