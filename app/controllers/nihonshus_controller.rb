@@ -16,7 +16,7 @@ class NihonshusController < ApplicationController
   end
 
   def search
-    # search by navbar
+    # search by navbar(all)
     @nihonshus =
     unless search_params.empty?
       Nihonshu.search(search_params)
