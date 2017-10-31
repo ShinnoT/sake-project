@@ -3,11 +3,17 @@ class NihonshusController < ApplicationController
 
   def index
     #request.path == "/nihonshus/:nihonshu_id/nihonshus"
-    @regex_path = /\/nihonshus\/\d\/nihonshus/ =~ request.path
+    # @regex_path = /\/nihonshus\/\d\/nihonshus/ =~ request.path
     # unless @regex_path == ( nil || 0 )
     if params[:nihonshu_id]
       @nihonshu1 = Nihonshu.find(params[:nihonshu_id])
-      @nihonshus = Nihonshu.all[0..5]
+      # @nihonshus = Nihonshu.all
+      @nihonshus =
+      if search_params
+        redirect_to nihonshu_search_path(@nihonshu1, resource_object, search: search_params)
+      else
+        Nihonshu.all[0..5]
+      end
       # @nihonshus =
       # if search_params
       #   redirect_to nihonshu_search_path(@nihonshu1, resource_object, search: search_params)
@@ -31,17 +37,17 @@ class NihonshusController < ApplicationController
 
   def search
     # search by navbar(all)
-    if request.path == "/nihonshus/:nihonshu_id/search"
+    if params[:nihonshu_id]
       @nihonshu1 = Nihonshu.find(params[:nihonshu_id])
       @nihonshus =
-      unless search_params.empty?
+      unless search_params.nil?
         Nihonshu.search(search_params)
       else
         nil
       end
     else
       @nihonshus =
-      unless search_params.empty?
+      unless search_params.nil?
         Nihonshu.search(search_params)
       else
         nil
@@ -57,7 +63,7 @@ class NihonshusController < ApplicationController
   def show
     # if current_page?(nihonshu_nihonshu_path(params[:nihonshu_id], params[:second_id]))
     # if request.path == "/nihonshus/:nihonshu_id/nihonshus/:second_id"
-    @regex_path = /\/nihonshus\/\d\/nihonshus\/\d/ =~ request.path
+    # @regex_path = /\/nihonshus\/\d\/nihonshus\/\d/ =~ request.path
     # unless @regex_path == ( nil || 0 )
     if params[:second_id]
       @nihonshu1 = Nihonshu.find(params[:nihonshu_id])

@@ -10,11 +10,11 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :nihonshus, only: [:show, :new, :create] do
+  resources :nihonshus, only: [:show] do
     post :get_barcode, on: :collection
     # get 'comparisons/by_id', to: 'comparisons#show'
-    get '/search', to: 'nihonshus#search', as: 'search'
-    resources :nihonshus, only: [:index, :show], param: :second_id do
+    # get '/search', to: 'nihonshus#search', as: 'search'
+    resources :nihonshus, only: [:show], param: :second_id do
       # resources :comparisons, only: :display
       get 'comparisons', to: 'comparisons#display'
     end
