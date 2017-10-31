@@ -8,25 +8,65 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <% @nihonshus.each do |nihonshu| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/736x/64/22/89/642289e48c71b5f21e9e72a5d5c6d98c--label-design-package-design.jpg');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>
-              <%= link_to nihonshu.name, nihonshu_path(nihonshu), style: "text-decoration: none; color: white;" %>
-            </h2>
-            <p>nice price!</p>
-            <label><input type="checkbox" id="sake_<%= nihonshu.id %>" value="first_checkbox">To compare</label>
+
+<% if request.path == "/nihonshus/:nihonshu_id/search" %>
+
+
+
+  <div class="container">
+    <div class="row">
+      <% @nihonshus.each do |nihonshu| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/736x/64/22/89/642289e48c71b5f21e9e72a5d5c6d98c--label-design-package-design.jpg');">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2>
+                <%= link_to nihonshu.name, nihonshu_nihonshu_path(@nihonshu1, nihonshu), style: "text-decoration: none; color: white;" %>
+              </h2>
+              <p>nice price!</p>
+              <label><input type="checkbox" id="sake_<%= nihonshu.id %>" value="first_checkbox">To compare</label>
+            </div>
+              <!-- <a class="card-link" href="#" ></a> -->
           </div>
-            <!-- <a class="card-link" href="#" ></a> -->
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+
+
+
+<% else %>
+
+
+
+  <div class="container">
+    <div class="row">
+      <% @nihonshus.each do |nihonshu| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/736x/64/22/89/642289e48c71b5f21e9e72a5d5c6d98c--label-design-package-design.jpg');">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2>
+                <%= link_to nihonshu.name, nihonshu_path(nihonshu), style: "text-decoration: none; color: white;" %>
+              </h2>
+              <p>nice price!</p>
+              <label><input type="checkbox" id="sake_<%= nihonshu.id %>" value="first_checkbox">To compare</label>
+            </div>
+              <!-- <a class="card-link" href="#" ></a> -->
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+<% end %>
+
+
+
     <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
 
   </div>

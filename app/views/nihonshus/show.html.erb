@@ -241,14 +241,17 @@
   </div>
 </div>
 
+<% unless request.path == "/nihonshus/:nihonshu_id/nihonshus/:second_id" %>
+  <form method='get' action= <%= nihonshu_nihonshus_path(@nihonshu)%>>
+  <!-- <select name='id'>
+    <option value='32'>Foo sake</option>
+    <option value='33'>Bar sake</option>
+  </select> -->
+  <input type="submit" value="Compare">
+  </form>
+<% end %>
 
-<form method='get' action= <%= nihonshu_comparisons_by_id_path(@nihonshu.id)%>>
-<select name='id'>
-  <option value='32'>Foo sake</option>
-  <option value='33'>Bar sake</option>
-</select>
-<input type="submit" value="Compare">
-</form>
+
 
 
 

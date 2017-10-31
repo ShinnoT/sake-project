@@ -2,11 +2,25 @@ class NihonshusController < ApplicationController
  skip_before_action :authenticate_user!, only: [:index, :search]
 
   def index
-    @nihonshus =
-    if search_params
-      redirect_to search_path(resource_object, search: search_params)
+    #request.path == "/nihonshus/:nihonshu_id/nihonshus"
+    @regex_path = /\/nihonshus\/\d\/nihonshus/ =~ request.path
+    # unless @regex_path == ( nil || 0 )
+    if params[:nihonshu_id]
+      @nihonshu1 = Nihonshu.find(params[:nihonshu_id])
+      @nihonshus = Nihonshu.all[0..5]
+      # @nihonshus =
+      # if search_params
+      #   redirect_to nihonshu_search_path(@nihonshu1, resource_object, search: search_params)
+      # else
+      #   nil
+      # end
     else
-      nil
+      @nihonshus =
+      if search_params
+        redirect_to search_path(resource_object, search: search_params)
+      else
+        nil
+      end
     end
   end
 
@@ -17,23 +31,43 @@ class NihonshusController < ApplicationController
 
   def search
     # search by navbar(all)
-    @nihonshus =
-    unless search_params.empty?
-      Nihonshu.search(search_params)
+    if request.path == "/nihonshus/:nihonshu_id/search"
+      @nihonshu1 = Nihonshu.find(params[:nihonshu_id])
+      @nihonshus =
+      unless search_params.empty?
+        Nihonshu.search(search_params)
+      else
+        nil
+      end
     else
-      nil
+      @nihonshus =
+      unless search_params.empty?
+        Nihonshu.search(search_params)
+      else
+        nil
+      end
     end
   end
 
-def show
-  @nihonshu = Nihonshu.find(params[:id])
-  @review = Review.new
-end
+# def show
+#   @nihonshu = Nihonshu.find(params[:id])
+#   @review = Review.new
+# end
 
   def show
-    @nihonshu = Nihonshu.find(params[:id])
-    @review = Review.new
-    @saving = Saving.new
+    # if current_page?(nihonshu_nihonshu_path(params[:nihonshu_id], params[:second_id]))
+    # if request.path == "/nihonshus/:nihonshu_id/nihonshus/:second_id"
+    @regex_path = /\/nihonshus\/\d\/nihonshus\/\d/ =~ request.path
+    # unless @regex_path == ( nil || 0 )
+    if params[:second_id]
+      @nihonshu1 = Nihonshu.find(params[:nihonshu_id])
+      @nihonshu2 = Nihonshu.find(params[:second_id])
+      redirect_to nihonshu_nihonshu_comparisons_path(@nihonshu1, @nihonshu2)
+    else
+      @nihonshu = Nihonshu.find(params[:id])
+      @review = Review.new
+      @saving = Saving.new
+    end
   end
 
   def get_barcode

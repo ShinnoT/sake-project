@@ -77,6 +77,10 @@
       </form>
   </div>
 </div>
+
+
+
+
   <div class="search-selection">  <!-- SELECTION -->
     <h3>Discover our selections</h3>
     <div class="container">
@@ -157,6 +161,19 @@
   <a href="#" class=" btn btn-treehouse"> Show sake</a>
   </div>
 </div>
+
+
+<%# if (/\/nihonshus\/\d\/nihonshus/ =~ request.path) != ( nil || 0 ) %>
+  <!-- <h1 style="font-size: 100px;">HELLO</h1> -->
+
+  <% unless @nihonshus.nil? %>
+    <% @nihonshus.each do |nihonshu| %>
+      <%= link_to nihonshu.name, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %>
+    <% end %>
+  <% end %>
+
+<%# end %>
+
 
 
 
