@@ -10,15 +10,6 @@
 
 }
 
-.summary {
-  margin: 0 auto;
-  font-size: 1.8rem;
-  line-height: normal;
-  font-weight: 900;
-}
-
-
-
 
 
 
@@ -49,6 +40,7 @@ h5 {
 }
 
 .card-img-top {
+    background-size: cover;
     display: block;
     width: 100%;
     height: auto;
