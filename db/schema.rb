@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030074226) do
+ActiveRecord::Schema.define(version: 20171031043519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "nihonshus", force: :cascade do |t|
     t.string   "name"
-    t.integer  "acidity"
+    t.float    "acidity"
     t.integer  "taste"
-    t.integer  "body"
+    t.string   "body"
     t.string   "region"
     t.float    "price"
     t.string   "temp"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20171030074226) do
     t.string   "aroma"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "image_url"
   end
 
   create_table "reviews", force: :cascade do |t|
