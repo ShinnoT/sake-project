@@ -50,7 +50,7 @@ class NihonshusController < ApplicationController
       unless search_params.nil?
         Nihonshu.search(search_params)
       else
-        nil
+        Nihonshu.all
       end
     end
   end
@@ -59,6 +59,7 @@ class NihonshusController < ApplicationController
 #   @nihonshu = Nihonshu.find(params[:id])
 #   @review = Review.new
 # end
+
 
   def show
     # if current_page?(nihonshu_nihonshu_path(params[:nihonshu_id], params[:second_id]))

@@ -6,96 +6,46 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'json'
 
 Nihonshu.destroy_all
 Review.destroy_all
+User.destroy_all
+puts 'Cleaning DB!'
 
-region = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","roppongi"]
 temp = ["hot", "warm","cold"]
-photos = []
-price = [1200, 5000, 3000, 1000]
-scale = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-aroma = ["flowery", "pungent", "sharp"]
+price = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000]
+scale = [1, 2, 3]
 
-barcode = []
+# ---Nihonshu data.json decoding---
+json = ActiveSupport::JSON.decode(File.read('./app/data/data.json'))
 
-20.times do
-
-  13.times do
-    barcode << rand(0..9).to_s
-  end
-
-  code = barcode.join("")
-
-  sake = Nihonshu.create(
-    name: Faker::Coffee.blend_name,
-    acidity: scale.sample,
-    taste: scale.sample,
-    body: scale.sample,
-    region: region.sample,
-    price: price.sample,
-    temp: temp.sample,
-    sku: code,
-    classification: "rice",
-    aroma: aroma.sample)
-
-  barcode = []
+# get each element from json file
+json.each do |elm|
+  Nihonshu.create!(
+              name:elm['brewery'],
+              acidity:elm['acidity'],
+              taste: scale.sample,
+              body: elm['alcohol'],
+              region:elm['prefecture'],
+              price: price.sample,
+              temp: temp.sample,
+              sku:elm['sku'],
+              classification:elm['classification'],
+              aroma:elm['rice_type'],
+              image_url:elm['img'])
 end
-
-sake = Nihonshu.create(
-  name: Faker::Coffee.blend_name,
-  acidity: scale.sample,
-   taste: scale.sample,
-   body: scale.sample,
-   region: region.sample,
-   price: price.sample,
-   temp: temp.sample,
-   sku: "5901234123457",
-   classification: "rice",
-   aroma: aroma.sample)
-
-sake = Nihonshu.create(
-  name: Faker::Coffee.blend_name,
-  acidity: scale.sample,
-   taste: scale.sample,
-   body: scale.sample,
-   region: region.sample,
-   price: price.sample,
-   temp: temp.sample,
-   sku: "4902102061582",
-   classification: "rice",
-   aroma: aroma.sample)
-
 
 puts 'Creating nihonshus!'
 
-new_user = User.create(email: "test@gmail.com", password: "123456")
+# ---User---
 
-new_review = Review.create(
-   title: "aaa",
-   description: "bbb",
-   rating: 3,
-   nihonshu: sake,
-   user: new_user
-   )
-
-# 12.times do
-#   User.create(
-      # email: Faker::Internet.email,
-      # first_name: Faker::Name.first_name,
-      # last_name:Faker::Name.last_name ,
-      # password: 'password',
-      # address: cities.sample)
-# end
+# new_user = User.create(first_name: "sai", last_name: "tuv", email: "test@gmail.com", password: "123456")
+# other_user = User.create(first_name: "whatever", last_name: "whatever", email: "blahblah@email.com", password: "123456")
+# user1 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsfdf@email.com", password: "123456")
+# user2 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahfrg@email.com", password: "123456")
+# user3 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsrgrrg@email.com", password: "123456")
+# user4 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahrgswefg@email.com", password: "123456")
 
 
-    # t.string   "name"
-    # t.integer  "acidity"
-    # t.integer  "taste"
-    # t.integer  "body"
-    # t.string   "region"
-    # t.float    "price"
-    # t.string   "temp"
-    # t.string   "sku"
-    # t.string   "classification"
-    # t.string   "aroma"
+puts 'Creating users!'

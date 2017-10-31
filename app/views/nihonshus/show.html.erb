@@ -7,8 +7,8 @@
     overflow: hidden;
   }
   .sake-pic > img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 200px;
   }
   @media only screen and (max-width : 600px) {
     .show-container {
@@ -22,10 +22,11 @@
       font-weight: bolder;
     }
     .show-button {
-      padding-bottom: 20px;
+      padding-bottom: 10px;
+
     }
     .more-button {
-      width: 200px;
+      width: 100px;
       height: 30px;
       font-size: 15px;
       padding: 2px;
@@ -101,24 +102,24 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="sake-pic">
-        <%= image_tag 'http://www.uwajimaya.com/static/ee_images/made/878e984abaf6f3f9/sake_large2_752_501_90.jpg' %>
+        <!-- <%= image_tag 'http://www.uwajimaya.com/static/ee_images/made/878e984abaf6f3f9/sake_large2_752_501_90.jpg' %> -->
+        <%= image_tag @nihonshu.image_url %>
       </div>
       <div class="sake-info">
         <div class="name">
           <%= @nihonshu.name %>
         </div>
         <div class="show-button">
-          <a href="#" class="btn btn-primary more-button">Buy Sake</a>
+          <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name%>/" class="btn btn-primary more-button">Buy</a>
+          <a href="#" class="btn btn-primary more-button">Compare</a>
+          <p></p>
+          <a>
+            <%= simple_form_for [@nihonshu, @saving] do |f| %>
+              <%#= f.button :submit %>
+              <%= f.submit 'Save', { class: 'btn btn-primary more-button' } %>
+            <% end %>
+          </a>
         </div>
-
-
-
-        <%= simple_form_for [@nihonshu, @saving] do |f| %>
-          <%#= f.button :submit %>
-          <%= f.submit 'Save' %>
-        <% end %>
-
-
 
 
 
@@ -134,42 +135,55 @@
       </div>
     </div>
 
-
-
     <div class="col-sm-6">
       <div class="summary">
         <h2>Summary</h2>
         <div class="row">
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Factory name:</p>
-              <p class="summary-down">Okayama S.B.</p>
+              <p>Region: <%= @nihonshu.region.capitalize%> </p>
+
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Region:</p>
-              <p class="summary-down">Okayama</p>
+              <p>Avg. Price: ¥ <%= @nihonshu.price %></p>
+
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Rice type:</p>
-              <p class="summary-down">Normal rice</p>
+              <p>Food Pairs: <% if @nihonshu.taste <= 2%>Fish</p>
+              <% elsif @nihonshu.taste == 3 %>Goat</p>
+              <% else %>Duck</p>
+              <%end%>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Food pairing:</p>
-              <p class="summary-down">Beef - Fish</p>
+              <p>Classification: <%= @nihonshu.classification.capitalize %></p>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p>Taste:</p>
-              <p class="summary-down">Sweet</p>
+              <p>Aroma: <%= @nihonshu.aroma.capitalize%></p>
             </div>
           </div>
+          <div class="col-xs-6">
+            <div class="col-margins">
+            <% if @nihonshu.taste == 1 %></p>
+              <p>Taste: Very Sweet </p>
+            <% elsif @nihonshu.taste == 2 %>
+              <p>Taste: Sweet </p>
+            <% elsif @nihonshu.taste == 3 %>
+              <p>Taste: Neutral </p>
+            <% elsif @nihonshu.taste == 4 %>
+              <p>Taste: Dry </p>
+            <%else%>
+              <p> Taste: Very Dry </p>
+            <%end%>
+            </div>
+          </div >
         </div>
       </div>
     </div>
@@ -252,7 +266,9 @@
   </form> -->
 <%# end %>
 
+
 <%= link_to "compare_to_search", search_path(nihonshu_id: @nihonshu.id, search: params[:search]) %>
+
 
 <%#= link_to "compare_to_index", nihonshu_nihonshus_path(@nihonshu) %>
 

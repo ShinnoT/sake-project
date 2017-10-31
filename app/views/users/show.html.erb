@@ -1,11 +1,26 @@
-<h1>User profile</h1>
 
-<ul>
-  <% if @nihonshus.empty? %>
-    <p>You have no saved Sakes...</p>
-  <% else %>
-    <% @nihonshus.each do |nihonshu| %>
+
+<div class="container">
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1>Eli Macy</h1>
+            <p>Girls just wanna go fun.</p>
+        </div>
+    </div>
+</div> <!-- /container -->
+
+<div>
+    <ul>
+      <% if @nihonshus.empty? %>
+      <p>You have no saved Sakes...</p>
+      <% else %>
+      <% @nihonshus.each do |nihonshu| %>
       <li><%= nihonshu.name %></li>
-    <% end %>
-  <% end %>
-</ul>
+      <% end %>
+      <% end %>
+      </ul>
+</div>
+
+
