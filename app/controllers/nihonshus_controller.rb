@@ -54,7 +54,7 @@ class NihonshusController < ApplicationController
       unless search_params.nil?
         Nihonshu.search(search_params)
       else
-        nil
+        Nihonshu.all
       end
     else
       @nihonshus =

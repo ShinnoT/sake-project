@@ -21,19 +21,34 @@
       color: rgba(0,0,0,0.7);
     }
     .name {
-      padding: 20px 0px 10px 0px;
-      font-size: 40px;
+      padding: 20px 10px 10px 10px;
+      font-size: 37px;
       font-weight: bolder;
     }
     .show-button {
       padding-bottom: 10px;
-
+      text-align: center;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .show-button > a {
+      text-decoration: none;
     }
     .more-button {
-      width: 100px;
-      height: 30px;
+      width: 100%;
+      /*height: 30px;*/
       font-size: 15px;
-      padding: 2px;
+      padding: 5px;
+/*      background-color: red;
+      border: solid 2px black;*/
+    }
+    .red-button {
+      width: 100%;
+/*      height: 10px;*/
+      font-size: 15px;
+      padding: 8px 0;
+      margin-bottom: 10px;
+      font-size: 20px;
     }
     .info {
       text-align: left;
@@ -114,15 +129,22 @@
           <%= @nihonshu.name %>
         </div>
         <div class="show-button">
-          <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name%>/" class="btn btn-primary more-button">Buy</a>
-          <%= link_to "compare", search_path(nihonshu_id: @nihonshu.id, search: params[:search]) %>
-          <p></p>
-          <a>
-            <%= simple_form_for [@nihonshu, @saving] do |f| %>
-              <%#= f.button :submit %>
-              <%= f.submit 'Save', { class: 'btn btn-primary more-button' } %>
-            <% end %>
-          </a>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= link_to "Compare", search_path(nihonshu_id: @nihonshu.id, search: params[:search]), class: "btn btn-danger red-button" %>
+            </div>
+            <div class="col-xs-6">
+              <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name%>/" class="btn btn-primary more-button">Buy</a>
+            </div>
+            <div class="col-xs-6">
+              <a>
+                <%= simple_form_for [@nihonshu, @saving] do |f| %>
+                  <%#= f.button :submit %>
+                  <%= f.submit 'Save', { class: 'btn btn-primary more-button' } %>
+                <% end %>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="info">
