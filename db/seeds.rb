@@ -8,6 +8,7 @@
 
 require 'json'
 
+Saving.destroy_all
 Nihonshu.destroy_all
 Review.destroy_all
 User.destroy_all
