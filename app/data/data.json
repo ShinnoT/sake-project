@@ -328,5 +328,27 @@
     "acidity": "1.4",
     "smv": "+1.0",
     "rice_type": "Yamada Nishiki"
+  },
+  {
+    "img": "https://www.urbansake.com/wp-content/uploads/2013/08/daishichi_junmai2.jpg",
+    "brewery": "Daishichi Junmai Kimoto",
+    "alcohol": "15.0%",
+    "classification": "Junmai, Kimoto",
+    "prefecture": "Fukushima",
+    "acidity": "1.8",
+    "smv": "+3.0",
+    "rice_type": "Gohyakumangoku",
+    "sku": "4965417142001"
+  },
+  {
+    "img": "https://cdn.shopify.com/s/files/1/0617/9709/products/Chikuha-Noto-Junmai_1024x1024.jpg",
+    "brewery": "Chikuha Noto Junmai",
+    "alcohol": "15.0%",
+    "classification": "Junmai Ginjo",
+    "prefecture": "Ishikawa",
+    "acidity": "1.8",
+    "smv": "+3.0",
+    "rice_type": "Yamadanishiki",
+    "sku": "4932383722315"
   }
 ]
