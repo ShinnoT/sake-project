@@ -16,18 +16,18 @@ function order_by_occurrence(arr) {
 
 const load_quagga = () => {
   if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
-    alert(JSON.stringify(1));
+    // alert(JSON.stringify(1));
     var last_result = [];
     if (Quagga.initialized == undefined) {
-      alert(JSON.stringify(2));
+      // alert(JSON.stringify(2));
       Quagga.onDetected(function(result) {
         // alert(JSON.stringify(3));
         var last_code = result.codeResult.code;
         last_result.push(last_code);
         if (last_result.length > 20) {
           code = order_by_occurrence(last_result)[0];
-          alert(code);
-          alert(JSON.stringify(last_result));
+          // alert(code);
+          // alert(JSON.stringify(last_result));
           last_result = [];
           Quagga.stop();
           $.ajax({
@@ -36,7 +36,7 @@ const load_quagga = () => {
             data: { sku: code },
             headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
           }).then( function(data) {
-            alert(JSON.stringify(data));
+            // alert(JSON.stringify(data));
             window.open(data.target_url,"_self");
           });
         }
