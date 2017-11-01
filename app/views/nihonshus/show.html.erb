@@ -137,12 +137,18 @@
               <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name%>/" class="btn btn-primary more-button">Buy</a>
             </div>
             <div class="col-xs-6">
-              <a>
+              <% if @nihonshu.save %>
+                <%= simple_form_for [@nihonshu, @saving] do |f| %>
+                  <%#= f.button :submit %>
+                  <%= f.submit 'Saved', { class: 'btn btn-secondary more-button' } %>
+                <% end %>
+              <% else %>
                 <%= simple_form_for [@nihonshu, @saving] do |f| %>
                   <%#= f.button :submit %>
                   <%= f.submit 'Save', { class: 'btn btn-primary more-button' } %>
                 <% end %>
-              </a>
+              <% end %>
+
             </div>
           </div>
         </div>
