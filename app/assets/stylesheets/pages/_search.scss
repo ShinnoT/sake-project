@@ -13,7 +13,11 @@ h5 {
     border: none;
     border-radius: 15px;
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-    margin: 20px;
+    margin: 10px 0;
+
+    a {
+      color: inherit;
+    }
 }
 
 .card-block {
@@ -35,19 +39,28 @@ h5 {
     height: 250px;
     margin-left: auto;
     margin-right: auto;
-
+    padding: 10px 0;
 }
 
 .card-title {
-    font-size: 1.28571429em;
+    font-size: 20px;
     font-weight: 700;
     line-height: 1.2857em;
+    margin-top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-text {
     clear: both;
     margin-top: .5em;
     color: rgba(0, 0, 0, .68);
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 .card-footer {
@@ -96,4 +109,8 @@ h5 {
     display: inline-block;
     margin-left: 4px;
     vertical-align: top;
+}
+
+.title{
+  text-align: center;
 }
