@@ -22,14 +22,14 @@ const load_quagga = () => {
       alert(JSON.stringify(2));
       Quagga.onDetected(function(result) {
         alert(JSON.stringify(3));
-        var last_code = result.codeResult.code;
+        // var last_code = result.codeResult.code;
         last_result.push(last_code);
         if (last_result.length > 20) {
           code = order_by_occurrence(last_result)[0];
+          alert(code);
+          alert(JSON.stringify(last_result));
           last_result = [];
           Quagga.stop();
-
-          alert(JSON.stringify(last_result));
           $.ajax({
             type: "POST",
             url: '/nihonshus/get_barcode',
