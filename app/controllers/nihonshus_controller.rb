@@ -1,5 +1,5 @@
 class NihonshusController < ApplicationController
- skip_before_action :authenticate_user!, only: [:index, :search]
+ skip_before_action :authenticate_user!, only: [:index, :search, :search_attr]
 
   def index
     @nihonshus = Nihonshu.all
