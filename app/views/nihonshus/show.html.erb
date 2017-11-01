@@ -22,7 +22,7 @@
     }
     .name {
       padding: 20px 10px 10px 10px;
-      font-size: 37px;
+      font-size: 30px;
       font-weight: bolder;
     }
     .show-button {
@@ -51,12 +51,12 @@
       font-size: 20px;
     }
     .info {
-      text-align: left;
+      text-align: center;
       margin: 0 auto;
       padding-left: 15px;
       padding-right: 15px;
       width: 90%;
-      border-bottom: solid 3px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
     }
     #rating-integer {
       font-size: 30px;
@@ -77,6 +77,9 @@
       padding-bottom: 15px;
       width: 90%;
       border-bottom: solid 3px rgba(0,0,0,0.2);
+      margin-top: 20px;
+      border-top: solid 3px rgba(0,0,0,0.2);
+
     }
     .summary > h2 {
       text-align: center;
@@ -128,6 +131,17 @@
         <div class="name">
           <%= @nihonshu.name %>
         </div>
+
+    <div class="info">
+          <p><strong id="rating-integer">4.7</strong>
+            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
+            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
+            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
+            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
+            <i class="fa fa-star star" aria-hidden="true"></i>
+          </p>
+        </div>
+
         <div class="show-button">
           <div class="row">
             <div class="col-xs-12">
@@ -147,15 +161,8 @@
           </div>
         </div>
 
-        <div class="info">
-          <p><strong id="rating-integer">4.7</strong>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" aria-hidden="true"></i>
-          </p>
-        </div>
+
+
       </div>
     </div>
 
