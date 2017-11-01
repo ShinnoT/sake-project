@@ -1,26 +1,123 @@
 
-
 <div class="container">
+  <div class="row">
     <div class="fb-profile">
         <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
-        <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="https://kitt.lewagon.com/placeholder/users/charleseeckhout"/>
         <div class="fb-profile-text">
-            <h1>Eli Macy</h1>
-            <p>Saved Sakes</p>
+            <h1>Charles Eeckhout</h1>
+
         </div>
     </div>
-</div> <!-- /container -->
+  </div>
 
-<div>
-    <ul>
-      <% if @nihonshus.empty? %>
-      <p>You have no saved Sakes...</p>
-      <% else %>
-      <% @nihonshus.each do |nihonshu| %>
-      <li><%= nihonshu.name %></li>
-      <% end %>
-      <% end %>
-      </ul>
+  <div class="col-sm-8">
+
+      <div data-spy="scroll" class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs ">
+            <li class="active">
+              <a href="#tab_default_1" data-toggle="tab">
+              About me </a>
+            </li>
+            <li>
+              <a href="#tab_default_2" data-toggle="tab">
+             Saved Sake</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_default_1">
+
+
+              <p>
+                I love Sake and Sake loves me ;-) !
+              </p>
+
+          <div class="tab-pane" id="tab_default_3">
+
+              <div class="row">
+              <div class="col-sm-6">
+
+                  <div class="form-group">
+                     <label for="email">Place of Birth:</label>
+                      <p> Brussels, Belgium</p>
+                 </div>
+                  <div class="form-group">
+                     <label for="email">Passions:</label>
+                      <p> Eat, drink, enjoy life</p>
+                 </div>
+                  <div class="form-group">
+                     <label for="email">Favorite Sake</label>
+                      <p> Kurouemo - Junmai Ginjo/p>
+                 </div>
+              </div>
+
+              <!--
+              <div class="col-sm-6">
+                 <div class="form-group">
+                     <label for="email">Place of Birth:</label>
+                      <p> pune, maharashtra</p>
+                 </div>
+                  <div class="form-group">
+                     <label for="email">Place of Birth:</label>
+                      <p> pune, maharashtra</p>
+                 </div>
+-->
+
+               </div>
+              </div>
+
+
+
+            </div>
+            <div class="tab-pane" id="tab_default_2">
+
+              <div>
+                  <ul>
+                    <% if @nihonshus.empty? %>
+                    <p>You have no saved Sakes...</p>
+                    <% else %>
+                    <p></p>
+                    <% @nihonshus.each do |nihonshu| %>
+
+
+
+
+
+
+
+<div class="col-xs-6 col-md-4 col-lg-3 mt-4">
+                <div class="carda">
+                     <img class="card-img-top" src=<%= nihonshu.image_url %>>
+                    <div class="card-block">
+                        <h4 class="card-title" title="<%= nihonshu.name %>"> <%= link_to nihonshu.name, nihonshu_path(nihonshu) %></h4>
+                        <div class="meta">
+                            <a href="#"><%= link_to nihonshu.region, nihonshu_path(nihonshu) %></a>
+                        </div>
+                        <div class="card-text">
+                            <%= link_to nihonshu.classification, nihonshu_path(nihonshu) %>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right"><%= link_to nihonshu.price, nihonshu_path(nihonshu) %> ¥</span>
+                    </div>
+                </div>
+              </div>
+
+
+
+
+
+                    <% end %>
+                    <% end %>
+                    </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
 </div>
-
 
