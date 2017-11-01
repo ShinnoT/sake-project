@@ -1,6 +1,6 @@
 class NihonshusController < ApplicationController
 
- skip_before_action :authenticate_user!, only: [:index, :search, :search_attr]
+ skip_before_action :authenticate_user!, only: [:index, :search, :show, :search_attr]
 
   def index
     #request.path == "/nihonshus/:nihonshu_id/nihonshus"
