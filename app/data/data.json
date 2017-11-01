@@ -1,6 +1,6 @@
 [{
     "img": "https://www.urbansake.com/wp-content/uploads/2017/07/kurouemon.png",
-    "brewery": "Yukawa Shuzoten",
+    "brewery": "16th Kurouemon Junmai Ginjo Yamadanishiki",
     "alcohol": "16.0%",
     "classification": "Junmai Ginjo",
     "prefecture": "Nagano",
@@ -11,7 +11,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/07/akabu-junmai.png",
-    "brewery": "Akabu Shuzo",
+    "brewery": "Akabu Junmai",
     "alcohol": "16%",
     "classification": "Junmai",
     "prefecture": "Iwate",
@@ -21,7 +21,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/07/akabu-jg.png",
-    "brewery": "Akabu Shuzo",
+    "brewery": "Akabu Junmai Ginjo",
     "alcohol": "16%",
     "classification": "Junmai Ginjo",
     "prefecture": "Iwate",
@@ -31,7 +31,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/07/mizunowa-gangi3.png",
-    "brewery": "Yaoshin Shuzo",
+    "brewery": "Gangi Mizunowa Junmai Ginjo",
     "alcohol": "15.5%",
     "classification": "Junmai Ginjo",
     "prefecture": "Yamaguchi",
@@ -41,7 +41,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/09/hotusetsu-hiyaoroshi-jdg.png",
-    "brewery": "Hokusetsu Shuzo",
+    "brewery": "Hokusetsu Junmai Daiginjo Hiyaoroshi Genshu",
     "alcohol": "17.0%",
     "classification": "Genshu, Hiyaoroshi, Junmai Daiginjo",
     "prefecture": "Niigata",
@@ -61,7 +61,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/07/kaganotsuki-jg.jpg",
-    "brewery": "Kaetsu Brewery",
+    "brewery": "Kaganotsuki Full Moon Junmai Ginjo",
     "alcohol": "15.5%",
     "classification": "Junmai Ginjo",
     "prefecture": "Ishikawa",
@@ -71,7 +71,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/09/kamo-nishiki-muroka.png",
-    "brewery": "Kamonishiki Shuzo",
+    "brewery": "Kamonishiki Shiboritate “sonomama” Muroka Ginjo",
     "alcohol": "15.2%",
     "classification": "Ginjo, Muroka, Shiboritate",
     "prefecture": "Niigata",
@@ -81,7 +81,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/07/kokken-koboshi.png",
-    "brewery": "Kokken Shuzo",
+    "brewery": "Kokken “Koboshi” Honjozo Namachozo",
     "alcohol": "15.5%",
     "classification": "Honjozo, Namachozo",
     "prefecture": "Fukushima",
@@ -91,7 +91,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/08/coccinella2.png",
-    "brewery": "Inoue Gomei Brewery",
+    "brewery": "Mino Kotobuki Coccinella Junmai",
     "alcohol": "15.0%",
     "classification": "Junmai",
     "prefecture": "Fukuoka",
@@ -101,7 +101,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/08/raifukuX.png",
-    "brewery": "Raifuku Shuzo",
+    "brewery": "Raifuku X Black Label Junmai Ginjo Nama Genshu",
     "alcohol": "17%",
     "classification": "Genshu, Junmai Ginjo, Nama",
     "prefecture": "Ibaraki",
@@ -111,7 +111,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/08/tanakakaka2.png",
-    "brewery": "Shiraito Shuzo",
+    "brewery": "Tanaka Rokujugo Junmai",
     "alcohol": "15%",
     "classification": "Junmai",
     "prefecture": "Fukuoka",
@@ -121,7 +121,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/08/taxi.png",
-    "brewery": "Kikuzakari Shuzo",
+    "brewery": "Taxi Driver Junmai Genshu",
     "alcohol": "18.5%",
     "classification": "Junmai Genshu",
     "prefecture": "Iwate",
@@ -131,7 +131,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2017/07/toko-junmai-ginjo-genshu.png",
-    "brewery": "Kojima Sohonten",
+    "brewery": "Toko Junmai Ginjo Genshu",
     "alcohol": "16.0%",
     "classification": "Genshu, Junmai Ginjo",
     "prefecture": "Yamagata",
@@ -141,7 +141,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/Biwa-No-Choju-Gintsukuri-200x600.jpg",
-    "brewery": "Ikemoto Shuzo",
+    "brewery": "Biwa No Choju Gintsukuri Junmai Daiginjo",
     "alcohol": "16.5%",
     "classification": "Junmai Daiginjo",
     "prefecture": "Shiga",
@@ -151,7 +151,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2016/05/akishika-bambi.png",
-    "brewery": "Akishika Shuzo",
+    "brewery": "Akishika Junmai Bambi Cup",
     "alcohol": "14.5%",
     "classification": "Junmai",
     "prefecture": "Osaka",
@@ -171,7 +171,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/akita-Homare_Junmai_Daiginjo-200x600.jpg",
-    "brewery": "Akita Homare Shuzo",
+    "brewery": "Akita Homare Junmai Daiginjo",
     "alcohol": "",
     "classification": "Junmai Daiginjo",
     "prefecture": "Akita",
@@ -181,7 +181,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/akira_junmai.jpg",
-    "brewery": "Nakamura Brewery Co Ltd",
+    "brewery": "Akira Junmai Organic",
     "alcohol": "14.0%",
     "classification": "Junmai, Organic",
     "prefecture": "Ishikawa",
@@ -191,7 +191,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/Akita-Homare_tokubetsu_junmai-200x600.jpg",
-    "brewery": "Akita Homare Shuzo",
+    "brewery": "Akita Homare Tokubetsu Junmai",
     "alcohol": "15.5%",
     "classification": "Tokubetsu Junmai",
     "prefecture": "Akita",
@@ -201,7 +201,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/akitabare-koshiki-junzukuri.jpg",
-    "brewery": "Akita Shuzo",
+    "brewery": "Akitabare Koshiki Junzukuri Junmai",
     "alcohol": "14.5%",
     "classification": "Junmai",
     "prefecture": "Akita",
@@ -211,7 +211,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/akitabare-shunsetsu.jpg",
-    "brewery": "Akita Shuzo",
+    "brewery": "Akitabare Shunsetsu Honjozo Nama",
     "alcohol": "14.5%",
     "classification": "Honjozo, Nama",
     "prefecture": "Akita",
@@ -221,7 +221,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/akitabare-suirakuten.jpg",
-    "brewery": "Akita Shuzo",
+    "brewery": "Akitabare Suirakuten Daiginjo",
     "alcohol": "15.5%",
     "classification": "Daiginjo",
     "prefecture": "Akita",
@@ -231,7 +231,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/akitabare-suirakutennama.jpg",
-    "brewery": "Akita Shuzo",
+    "brewery": "Akitabare Suirakuten Daiginjo Genshu Nama",
     "alcohol": "18.0%",
     "classification": "Daiginjo, Genshu, Nama",
     "prefecture": "Akita",
@@ -261,7 +261,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/amabuki-kurenai1.jpg",
-    "brewery": "Amabuki Shuzo",
+    "brewery": "Amabuki Gin no Kurenai Junmai",
     "alcohol": "16.5%",
     "classification": "Junmai",
     "prefecture": "Saga",
@@ -271,7 +271,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/amabuki-junmai_ginjo.jpg",
-    "brewery": "Amabuki Shuzo",
+    "brewery": "Amabuki Junmai Ginjo",
     "alcohol": "16.5%",
     "classification": "Junmai Ginjo",
     "prefecture": "Saga",
@@ -281,7 +281,7 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2016/01/amabuki-sparkling2.png",
-    "brewery": "Amabuki Shuzo",
+    "brewery": "Amabuki Junmai Ginjo Sparkling Nigori",
     "alcohol": "14.5%",
     "classification": "Junmai Ginjo, Nigori, Sparkling",
     "prefecture": "Saga",
@@ -291,12 +291,42 @@
   },
   {
     "img": "https://www.urbansake.com/wp-content/uploads/2013/08/amabuki-yamahai.jpg",
-    "brewery": "Amabuki Shuzo",
+    "brewery": "Amabuki Junmai Yamahai",
     "alcohol": "15.5%",
     "classification": "Junmai, Yamahai",
     "prefecture": "Saga",
     "acidity": "",
     "smv": "+4.0",
     "rice_type": "Omachi"
+  },
+  {
+    "img": "https://digitalnewsroom.media/uploads/2016/05/Aiyu-Daiginjo-by-Aiyu-Shuzo-Daiginjo-Itako-Trophy.jpg",
+    "brewery": "Aiyu Daiginjo",
+    "alcohol": "16.0%",
+    "classification": "Daiginjo",
+    "prefecture": "Ibaraki",
+    "acidity": "",
+    "smv": "+4.0",
+    "rice_type": "Omachi"
+  },
+  {
+    "img": "https://digitalnewsroom.media/uploads/2016/05/Taiheizan-Junmai-Daiginjo-Yushin-by-Kodama-Junmai-Daiginjo-Katagami-Trophy.jpg",
+    "brewery": "Taiheizan Junmai",
+    "alcohol": "16.0%",
+    "classification": "Junmai",
+    "prefecture": "Akita",
+    "acidity": "1.5",
+    "smv": "+2.0",
+    "rice_type": "Omachi"
+  },
+  {
+    "img": "http://www.minato.com.sg/wp-content/uploads/2016/07/MUTSUHASSEN-DAIGINJO.jpg",
+    "brewery": "Mutsu-Hassen Daiginjo",
+    "alcohol": "16.0%",
+    "classification": "Daiginjo",
+    "prefecture": "Aomori",
+    "acidity": "1.4",
+    "smv": "+1.0",
+    "rice_type": "Yamada Nishiki"
   }
 ]

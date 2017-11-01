@@ -10,14 +10,17 @@ class Nihonshu < ApplicationRecord
 
   def self.search_attr(query_taste, query_price1, query_price2, query_rating)
     # join 2 tables(Nihonshu,Review)
-    join_table = Nihonshu.joins("LEFT OUTER JOIN reviews on reviews.nihonshu_id = nihonshus.id")
+    nihonshus = Nihonshu.all
+    if query_rating
+      join_table = nihonshus.left_joins(:reviews)
 
-    # define a scope by rating
-    select_rating = join_table.select("nihonshus.*, AVG(reviews.rating) as rating_average").group('nihonshus.id').having('AVG(reviews.rating) >= ?', query_rating)
-
+      # define a scope by rating
+      nihonshus = join_table.select("nihonshus.*, AVG(reviews.rating)").group('nihonshus.id').having('AVG(reviews.rating) >= ?', query_rating)
+    end
     # search by rating, by taste, by price
-    select_rating.where("taste >= ?", query_taste)
-    select_rating.where("price BETWEEN ? AND ?", query_price1, query_price2)
+    nihonshus = nihonshus.where("taste >= ?", query_taste) if query_taste
+    nihonshus = nihonshus.where("price BETWEEN ? AND ?", query_price1, query_price2) if query_price1 && query_price2
+    nihonshus
   end
 
   def self.search(query)
