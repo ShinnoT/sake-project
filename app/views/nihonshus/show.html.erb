@@ -179,24 +179,30 @@
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-              <p><div class="text-card"><% if @nihonshu.taste <= 2%>Food Pairs: Fish</p></div>
-              <% elsif @nihonshu.taste == 3 %><div class="text-card">Goat</div></p>
-              <% else %><div class="text-card">Duck</div></p>
-              <%end%>
+              <div class="text-card">
+                Food Pairs:
+                <% if @nihonshu.taste <= 2%>
+                  Fish
+                <% elsif @nihonshu.taste == 3 %>
+                  Goat
+                <% else %>
+                  Duck
+                <%end%>
+              </div>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-            <div class="text-card">
-              <p>Classification: <%= @nihonshu.classification.capitalize %></p>
-            </div>
+              <div class="text-card">
+                <p>Classification: <%= @nihonshu.classification.capitalize %></p>
+              </div>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="col-margins">
-            <div class="text-card">
-              <p>Aroma: <%= @nihonshu.aroma.capitalize%></p>
-            </div>
+              <div class="text-card">
+                <p>Aroma: <%= @nihonshu.aroma.capitalize%></p>
+              </div>
             </div>
           </div>
           <div class="col-xs-6">
