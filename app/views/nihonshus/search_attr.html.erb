@@ -1,34 +1,80 @@
 
- <div class="banner-search" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.ciawine.com/wp-content/uploads/2014/10/UnderstandingSake.jpg');">
+ <% if params[:nihonshu_id] %>
 
-  <div class="banner" >
-     <div class="banner-content">
-      <p>here you are! :-) </p>
-    </div>
-  </div>
-</div>
+
 
 <div class="container">
-  <div class="row">
-    <% @nihonshus.each do |nihonshu| %>
-      <div class="col-xs-12 col-sm-4">
-<!--         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/736x/64/22/89/642289e48c71b5f21e9e72a5d5c6d98c--label-design-package-design.jpg');"> -->
-           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= nihonshu.image_url %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>
-              <%= link_to nihonshu.name, nihonshu_path(nihonshu), style: "text-decoration: none; color: white;" %>
-            </h2>
-            <p>nice price!</p>
-            <label><input type="checkbox" id="sake_<%= nihonshu.id %>" value="first_checkbox">To compare</label>
-          </div>
-            <!-- <a class="card-link" href="#" ></a> -->
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div class="title">
+<h3> The best sake selection </h3>
 </div>
-    <%= link_to "Sign Up", new_user_session_path, class: "btn btn-lg btn-primary"  %>
 
+      <div class="row">
+       <% unless @nihonshus.empty? %>
+        <% @nihonshus.each do |nihonshu| %>
+
+            <div class="col-xs-6 col-md-4 col-lg-3 mt-4">
+                <div class="carda">
+                     <img class="card-img-top" src=<%= nihonshu.image_url %>>
+                    <div class="card-block">
+                        <h4 class="card-title" title="<%= nihonshu.name %>"> <%= link_to nihonshu.name, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %></h4>
+                        <div class="meta">
+                            <a href="#"><%= link_to nihonshu.region, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %></a>
+                        </div>
+                        <div class="card-text">
+                            <%= link_to nihonshu.classification, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right"><%= link_to nihonshu.price, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %> ¥</span>
+                    </div>
+                </div>
+              </div>
+            <% end %>
+      <% end %>
+    </div>
   </div>
+
+
+
+
+<% else %>
+
+
+
+<div class="container">
+<div class="title">
+<h3> Please find here your selection: </h3>
 </div>
+
+      <div class="row">
+       <% unless @nihonshus.empty? %>
+        <% @nihonshus.each do |nihonshu| %>
+
+            <div class="col-xs-6 col-md-4 col-lg-3 mt-4">
+                <div class="carda">
+                     <img class="card-img-top" src=<%= nihonshu.image_url %>>
+                    <div class="card-block">
+                        <h4 class="card-title" title="<%= nihonshu.name %>"> <%= link_to nihonshu.name, nihonshu_path(nihonshu, search: params[:search]) %></h4>
+                        <div class="meta">
+                            <a href="#"><%= link_to nihonshu.region, nihonshu_path(nihonshu, search: params[:search]) %></a>
+                        </div>
+                        <div class="card-text">
+                            <%= link_to nihonshu.classification, nihonshu_path(nihonshu, search: params[:search]) %>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right"><%= link_to nihonshu.price, nihonshu_path(nihonshu, search: params[:search]) %> ¥</span>
+                    </div>
+                </div>
+              </div>
+            <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+<% end %>
+
+
