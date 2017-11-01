@@ -12,18 +12,24 @@
     <div class="row">
       <% unless @nihonshus.empty? %>
         <% @nihonshus.each do |nihonshu| %>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/736x/64/22/89/642289e48c71b5f21e9e72a5d5c6d98c--label-design-package-design.jpg');">
-              <div class="card-category">Popular</div>
-              <div class="card-description">
-                <h2>
-                  <%= link_to nihonshu.name, nihonshu_nihonshu_path(@nihonshu1, nihonshu), style: "text-decoration: none; color: white;" %>
-                </h2>
-                <p>nice price!</p>
-              </div>
-                <!-- <a class="card-link" href="#" ></a> -->
-            </div>
-          </div>
+      
+              <div class="col-xs-6 col-md-4 col-lg-3 mt-4">
+                <div class="carda">
+                     <img class="card-img-top" src=<%= nihonshu.image_url %>>
+                    <div class="card-block">
+                        <h4 class="card-title" title="<%= nihonshu.name %>"> <%= link_to nihonshu.name, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %></h4>
+                        <div class="meta">
+                            <a href="#"><%= link_to nihonshu.region, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %></a>
+                        </div>
+                        <div class="card-text">
+                            <%= link_to nihonshu.classification, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right"><%= link_to nihonshu.price, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %> ¥</span>
+                    </div>
+                </div>
+      
         <% end %>
       <% end %>
     </div>
@@ -40,24 +46,24 @@
     <div class="row">
       <% unless @nihonshus.empty? %>
 
-
         <% @nihonshus.each do |nihonshu| %>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= nihonshu.image_url %>);">
-              <div class="card-category">Popular</div>
-              <div class="card-description">
-                <h2>
-                  <%= link_to nihonshu.name, nihonshu_path(nihonshu,
-                  search: params[:search]), style: "text-decoration: none; color: white;" %>
-                </h2>
-                <p>¥<%= nihonshu.price %></p>
-              </div>
-                <!-- <a class="card-link" href="#" ></a> -->
-            </div>
-          </div>
+              <div class="col-xs-6 col-md-4 col-lg-3 mt-4">
+                <div class="carda">
+                     <img class="card-img-top" src=<%= nihonshu.image_url %>>
+                    <div class="card-block">
+                        <h4 class="card-title" title="<%= nihonshu.name %>"> <%= link_to nihonshu.name, nihonshu_path(nihonshu, search: params[:search]) %></h4>
+                        <div class="meta">
+                            <a href="#"><%= link_to nihonshu.region, nihonshu_path(nihonshu, search: params[:search]) %></a>
+                        </div>
+                        <div class="card-text">
+                            <%= link_to nihonshu.classification, nihonshu_path(nihonshu, search: params[:search]) %>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right"><%= link_to nihonshu.price, nihonshu_path(nihonshu, search: params[:search]) %> ¥</span>
+                    </div>
+                </div>
         <% end %>
-
-
 
       <% end %>
     </div>
