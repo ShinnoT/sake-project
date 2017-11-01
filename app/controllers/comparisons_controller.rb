@@ -1,8 +1,6 @@
 class ComparisonsController < ApplicationController
-	# def show
-	#   @sake1 = Nihonshu.find(params[:nihonshu_id])
-	#   @sake2 = Nihonshu.find(params[:id])
-	# end
+
+skip_before_action :authenticate_user!, only: [:display]
 
   def display
     @sake1 = Nihonshu.find(params[:nihonshu_id])
@@ -10,4 +8,5 @@ class ComparisonsController < ApplicationController
     @rating1 = @sake1.reviews ? 0 : @sake1.reviews.first.rating
     @rating2 = @sake2.reviews ? 0 : @sake2.reviews.first.rating
   end
+
 end
