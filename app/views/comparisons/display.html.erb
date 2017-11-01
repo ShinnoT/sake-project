@@ -1,6 +1,9 @@
 <style>
   .sake-info {
     margin: 0 auto;
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
   }
   .sake-info > h3 {
     text-align: center;
@@ -40,6 +43,13 @@
   .back-btn > a:link:hover {
     box-shadow: 2px 2px 5px rgba(244, 66, 66, 0.1);
   }
+  .compare-image {
+    width: 50px;
+    height: auto;
+  }
+  .sake-info > .row > .col-xs-4 > h4 {
+    margin-top: 50px;
+  }
 
 </style>
 
@@ -56,9 +66,17 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="sake-info">
-        <h3><%= @sake1.name %></h3>
-        <h5>vs.</h5>
-        <h3><%= @sake2.name %></h3>
+        <div class="row">
+          <div class="col-xs-4">
+            <img class="compare-image" src=<%= @sake1.image_url %>>
+          </div>
+          <div class="col-xs-4">
+            <h4>vs.</h4>
+          </div>
+          <div class="col-xs-4">
+            <img class="compare-image" src=<%= @sake2.image_url %>>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-xs-12">
@@ -147,7 +165,12 @@
           categoryPercentage: 0.8,
           barPercentage: 0.7,
           ticks: {
-            min: 0,
+            min: 0
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            beginAtZero: true
           }
         }]
       }
