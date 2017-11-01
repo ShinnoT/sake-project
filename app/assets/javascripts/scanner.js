@@ -21,8 +21,8 @@ const load_quagga = () => {
     if (Quagga.initialized == undefined) {
       alert(JSON.stringify(2));
       Quagga.onDetected(function(result) {
-        alert(JSON.stringify(3));
-        // var last_code = result.codeResult.code;
+        // alert(JSON.stringify(3));
+        var last_code = result.codeResult.code;
         last_result.push(last_code);
         if (last_result.length > 20) {
           code = order_by_occurrence(last_result)[0];
