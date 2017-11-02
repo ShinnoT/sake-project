@@ -86,6 +86,8 @@ class NihonshusController < ApplicationController
       @nihonshu = Nihonshu.find(params[:id])
       @review = Review.new
       @saving = Saving.new
+      @ratings = @nihonshu.reviews.map { |review| review.rating.to_i }
+      @average_rating = (@ratings.inject(:+)) / (@ratings.length)
     end
   end
 
