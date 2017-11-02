@@ -14,7 +14,11 @@ function order_by_occurrence(arr) {
   });
 }
 
+let loaded;
+
 const load_quagga = () => {
+  if (loaded) return;
+  loaded = true;
   if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
     // alert(JSON.stringify(1));
     var last_result = [];
@@ -65,7 +69,9 @@ const load_quagga = () => {
   }
 }
 
-$('.search-scan').click(e => {
-  $(e.currentTarget).remove();
+
+$("#scan-button").click(e => {
+  e.preventDefault();
   load_quagga();
+  $("#barcode-scanner").toggleClass("active-scanner-video");
 });

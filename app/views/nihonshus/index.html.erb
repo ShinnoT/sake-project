@@ -15,8 +15,8 @@
           </div> -->
 
           <div class="search-scan">
-           <a href="#barcode-scanner"></a>
-            <a href="#" class="btn btn-treehouse"> Scan your bottle </a>
+           <!-- <a href="#barcode-scanner"></a> -->
+            <a href="#" class="btn btn-treehouse" id="scan-button"> Scan your bottle </a>
 
           </div>
 
@@ -24,10 +24,11 @@
 
            <!--<img src="https://images-eu.ssl-images-amazon.com/images/I/71YFP9NXAsL.png" alt="scan me"> -->
 
-           <div id="barcode-scanner"><video autoplay="true" preload="auto" src=""></video>
-           <button id="hide">Hide</button>
-           <button id="show">Show</button>
-           </div>
+             <div id="barcode-scanner"><video autoplay="true" preload="auto" src=""></video>
+             <!-- <button id="hide">Hide</button>
+             <button id="show">Show</button> -->
+             </div>
+
          </div>
        </div>
 
@@ -219,14 +220,15 @@ const typed = new Typed("#typed-content", {
 <!-- hide and show scan -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-    $("#hide").click(function(){
-        $("video").hide();
-    });
-    $("#show").click(function(){
-        $("video").show();
-    });
-});
+// $(document).ready(function(){
+//     $("#hide").click(function(){
+//         $("video").hide();
+//     });
+//     $("#show").click(function(){
+//         $("video").show();
+//     });
+// });
+
 </script>
 
 
