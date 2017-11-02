@@ -24,10 +24,10 @@
 }
 
 .range input {
-  width: 80%;
+  width: 86%;
   position: absolute;
   top: 2px;
-  left: 10%;
+  left: 7%;
   height: 0;
   -webkit-appearance: none;
 
@@ -103,13 +103,13 @@
     }
   }
 
-  .active {
-    color: #F25858;
-  }
+  // .active {
+  //   color: #F25858;
+  // }
 
-  .selected::before {
-    background: #F25858;
-  }
+  // .selected::before {
+  //   background: #F25858;
+  // }
 
   .active.selected::before {
     display: none;
