@@ -30,7 +30,7 @@
               <%= link_to "Compare", search_path(nihonshu_id: @nihonshu.id, search: params[:search]), class: "btn btn-danger red-button" %>
             </div>
             <div class="col-xs-6">
-              <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name%>/" class="btn btn-primary more-button">Buy</a>
+              <a href="https://search.rakuten.co.jp/search/mall/<%= @nihonshu.name.split(" ").first %>/" class="btn btn-primary more-button">Buy</a>
             </div>
             <div class="col-xs-6">
               <%# if @nihonshu.joins(:user).where(users: {latitude: nil}) %>

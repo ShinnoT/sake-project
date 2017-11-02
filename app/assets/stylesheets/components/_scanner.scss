@@ -1,9 +1,16 @@
 #barcode-scanner {
   width: 351px;
   margin: 0 auto;
+  display: none;
 }
 #barcode-scanner video {
   border-radius: 15px;
-  display: none;
-
+  // display: none;
+  // visibility: hidden;
 }
+
+#barcode-scanner.active-scanner-video {
+  // visibility: visible;
+  display: block;
+}
+
