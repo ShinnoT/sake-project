@@ -27,4 +27,5 @@ class Nihonshu < ApplicationRecord
     # search by navbar
     where("name ILIKE ?", "%#{query}%")
   end
+
 end
