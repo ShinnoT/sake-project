@@ -13,12 +13,14 @@
         </div>
 
     <div class="info">
-          <p><strong id="rating-integer"><%= @average_rating %></strong>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
-            <i class="fa fa-star star" aria-hidden="true"></i>
+          <p>
+            <strong id="rating-integer"><%= @average_rating.to_f %></strong>
+            <% @average_rating.times do %>
+              <i class="fa fa-star star" id="starred" aria-hidden="true"></i>
+            <% end %>
+            <% (5 - @average_rating).times do %>
+             <i class="fa fa-star star" aria-hidden="true"></i>
+            <% end %>
           </p>
         </div>
 

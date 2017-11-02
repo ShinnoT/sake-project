@@ -14,7 +14,7 @@ class SavingsController < ApplicationController
       redirect_to user_path(current_user)
     else
       # flash[:alert] = "Cant save Sake. Already saved!"
-      render 'nihonshus/show'
+      # render 'nihonshus/show'
     end
   end
 

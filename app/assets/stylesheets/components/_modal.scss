@@ -2,6 +2,11 @@
   height: 100px;
   background-color: transparent;
 }
+@media all and (min-width: #{$screen-sm}){
+  .modal-container {
+    display: none;
+  }
+}
 .modal-button {
   background-color: white;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
@@ -12,7 +17,7 @@
   bottom: 5px;
   left: 50%;
   margin-left: -35px;
-  z-index: 9999999999999999999999999;
+  z-index: 1001;
   border-radius: 50%;
   text-align: center;
   i {
