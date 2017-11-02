@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <span class="float-right"><%= link_to nihonshu.price, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %> ¥</span>
+                        <span class="float-right"><%= link_to nihonshu.price.to_i, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %> ¥</span>
                     </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <span class="float-right"><%= link_to nihonshu.price, nihonshu_path(nihonshu, search: params[:search]) %> ¥</span>
+                        <span class="float-right"><%= link_to nihonshu.price.to_i, nihonshu_path(nihonshu, search: params[:search]) %> ¥</span>
                     </div>
                 </div>
               </div>
