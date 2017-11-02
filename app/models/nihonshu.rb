@@ -28,4 +28,12 @@ class Nihonshu < ApplicationRecord
     where("name ILIKE ?", "%#{query}%")
   end
 
+  # def saved?(@nihonshu)
+    
+  # end
+
+  def saved_by?(user)
+    # savings.where(user: user).present?
+    savings.find_by(user: user).present?
+  end
 end
