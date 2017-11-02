@@ -19,27 +19,6 @@ price = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000]
 scale = [1, 2, 3, 4]
 rating = [1, 2, 3, 4, 5]
 
-# ---Nihonshu data.json decoding---
-json = ActiveSupport::JSON.decode(File.read('./app/data/data.json'))
-
-# get each element from json file
-json.each do |elm|
-  Nihonshu.create!(
-              name:elm['brewery'],
-              acidity:elm['acidity'],
-              taste: scale.sample,
-              body: elm['alcohol'],
-              region:elm['prefecture'],
-              price: price.sample,
-              temp: temp.sample,
-              sku:elm['sku'],
-              classification:elm['classification'],
-              aroma:elm['rice_type'],
-              image_url:elm['img'])
-end
-
-puts 'Creating nihonshus!'
-
 # ---User---
 user1 = User.create(email: "charles@gmail.com", password: "123456")
 user2 = User.create(email: "neema@gmail.com", password: "123456")
@@ -56,28 +35,37 @@ allUsers = [user1, user2, user3, user4, user5,
 
 puts 'Creating users!'
 
+# ---Nihonshu data.json decoding---
+json_nihonshu = ActiveSupport::JSON.decode(File.read('./app/data/data.json'))
 
 # ---Reviews review.json decoding---
-json = ActiveSupport::JSON.decode(File.read('./app/data/review.json'))
+json_review = ActiveSupport::JSON.decode(File.read('./app/data/review.json'))
 
 # get each element from json file
-json.each do |elm|
-  Review.create!(
-              title:"a",
-              description:elm['review'],
-              rating: rating.sample,
-              nihonshu: Nihonshu.where( 'id >= ?', rand(Nihonshu.first.id..Nihonshu.last.id) ).first,
-              user: allUsers.sample)
+json_nihonshu.each do |elm|
+  Nihonshu.create!(
+    name:elm['brewery'],
+    acidity:elm['acidity'],
+    taste: scale.sample,
+    body: elm['alcohol'],
+    region:elm['prefecture'],
+    price: price.sample,
+    temp: temp.sample,
+    sku:elm['sku'],
+    classification:elm['classification'],
+    aroma:elm['rice_type'],
+    image_url:elm['img'])
+  # get each element from json file
+  json_review.each do |elm|
+    Review.create!(
+      # title:"a",
+      description:elm['review'],
+      rating: rating.sample,
+      nihonshu: Nihonshu.where( 'id >= ?', rand(Nihonshu.first.id..Nihonshu.last.id) ).first,
+      user: allUsers.sample)
+  end
 end
 
-puts 'Creating reviews!'
-
-# ---Old Review---
-# review = Review.create(title:"good sake",
-#                         description: "Dry and rice forward Junmai cup sake from Osaka. Cup design is basically irresistible.",
-#                         rating: rating.sample,
-#                         nihonshu: Nihonshu.find_by_name('16th Kurouemon Junmai Ginjo Yamadanishiki'),
-#                         user: new_user
-#                         )
+puts 'Creating nihonshus&reviews!'
 
 
