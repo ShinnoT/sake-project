@@ -41,144 +41,43 @@ end
 puts 'Creating nihonshus!'
 
 # ---User---
-new_user = User.create(email: "cherlles@gmail.com", password: "123456")
-other_user = User.create(email: "tes@gmail.com", password: "123456")
-user1 = User.create(email: "saikhan@gmail.com", password: "123456")
+user1 = User.create(email: "charles@gmail.com", password: "123456")
 user2 = User.create(email: "neema@gmail.com", password: "123456")
 user3 = User.create(email: "shinno@gmail.com", password: "123456")
-user4 = User.create(email: "paul@gmail.com", password: "123456")
+user4 = User.create(email: "saikhan@gmail.com", password: "123456")
+user5 = User.create(email: "carla@gmail.com", password: "123456")
+user6 = User.create(email: "debbie@gmail.com", password: "123456")
+user7 = User.create(email: "enzo@gmail.com", password: "123456")
+user8 = User.create(email: "ian@gmail.com", password: "123456")
+user9 = User.create(email: "james@gmail.com", password: "123456")
+user10 = User.create(email: "lee@gmail.com", password: "123456")
+allUsers = [user1, user2, user3, user4, user5,
+            user6, user7, user8, user9, user10]
 
 puts 'Creating users!'
 
-# ---Review(new_user)---
-review1 = Review.create(title:"good sake",
-                        description: "Dry and rice forward Junmai cup sake from Osaka. Cup design is basically irresistible.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('16th Kurouemon Junmai Ginjo Yamadanishiki'),
-                        user: new_user
-                        )
-review2 = Review.create(title:"i like this sake",
-                        description: "Earthy and full of bold rice flavors, this sake shines when warmed.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Akabu Junmai Ginjo'),
-                        user: new_user
-                        )
-review3 = Review.create(title:"best",
-                        description: "Dry and light.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Gangi Mizunowa Junmai Ginjo'),
-                        user: new_user
-                        )
-review4 = Review.create(title:"Best One",
-                        description: "Sweet drink.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Chikuha Noto Junmai'),
-                        user: new_user
-                        )
 
-# ---Review(user1)---
-review5 = Review.create(title:"not bad",
-                        description: "Cup design is basically irresistible.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('16th Kurouemon Junmai Ginjo Yamadanishiki'),
-                        user: user1
-                        )
-review6 = Review.create(title:"good sake",
-                        description: "this sake shines when warmed.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Akabu Junmai Ginjo'),
-                        user: user1
-                        )
-review7 = Review.create(title:"i like it",
-                        description: "Super Dry!",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Gangi Mizunowa Junmai Ginjo'),
-                        user: user1
-                        )
-review8 = Review.create(title:"Best",
-                        description: "This josen sake has been loved in the Noto region since the brewery was founded. All of the rice that goes into making it is from Noto, making it a local sake in every sense.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Chikuha Noto Junmai'),
-                        user: user1
-                        )
+# ---Reviews review.json decoding---
+json = ActiveSupport::JSON.decode(File.read('./app/data/review.json'))
 
-# ---Review(user2)---
-review9 = Review.create(title:"not bad",
-                        description: "Cup design is basically irresistible.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('16th Kurouemon Junmai Ginjo Yamadanishiki'),
-                        user: user2
-                        )
-review10 = Review.create(title:"good sake",
-                        description: "this sake shines when warmed.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Akabu Junmai Ginjo'),
-                        user: user2
-                        )
-review11 = Review.create(title:"i like it",
-                        description: "Super Dry!",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Gangi Mizunowa Junmai Ginjo'),
-                        user: user2
-                        )
-review12 = Review.create(title:"Good One",
-                        description: "Quite intense and spicy, with hints of milk and green pepper.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Chikuha Noto Junmai'),
-                        user: user2
-                        )
+# get each element from json file
+json.each do |elm|
+  Review.create!(
+              title:"a",
+              description:elm['review'],
+              rating: rating.sample,
+              nihonshu: Nihonshu.where( 'id >= ?', rand(Nihonshu.first.id..Nihonshu.last.id) ).first,
+              user: allUsers.sample)
+end
+
+puts 'Creating reviews!'
+
+# ---Old Review---
+# review = Review.create(title:"good sake",
+#                         description: "Dry and rice forward Junmai cup sake from Osaka. Cup design is basically irresistible.",
+#                         rating: rating.sample,
+#                         nihonshu: Nihonshu.find_by_name('16th Kurouemon Junmai Ginjo Yamadanishiki'),
+#                         user: new_user
+#                         )
 
 
-# ---Review(user3)---
-review13 = Review.create(title:"not bad",
-                        description: "Cup design is basically irresistible.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('16th Kurouemon Junmai Ginjo Yamadanishiki'),
-                        user: user3
-                        )
-review14 = Review.create(title:"good sake",
-                        description: "this sake shines when warmed.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Akabu Junmai Ginjo'),
-                        user: user3
-                        )
-review15 = Review.create(title:"i like it",
-                        description: "Super Dry!",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Gangi Mizunowa Junmai Ginjo'),
-                        user: user3
-                        )
-review16 = Review.create(title:"Good",
-                        description: "Lots of fruit and banana, hints of peach and very well balanced, with elegance, purity and a touch of spice.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Chikuha Noto Junmai'),
-                        user: user3
-                        )
-
-# ---Review(user4)---
-review17 = Review.create(title:"not bad",
-                        description: "Cup design is basically irresistible.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('16th Kurouemon Junmai Ginjo Yamadanishiki'),
-                        user: user4
-                        )
-review18 = Review.create(title:"good sake",
-                        description: "this sake shines when warmed.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Akabu Junmai Ginjo'),
-                        user: user4
-                        )
-review19 = Review.create(title:"i like it",
-                        description: "Super Dry!",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Gangi Mizunowa Junmai Ginjo'),
-                        user: user4
-                        )
-review20 = Review.create(title:"Good Sake",
-                        description: "this sake shines when warmed.",
-                        rating: rating.sample,
-                        nihonshu: Nihonshu.find_by_name('Chikuha Noto Junmai'),
-                        user: user4
-                        )
-
-puts 'Creating Reviews!'
