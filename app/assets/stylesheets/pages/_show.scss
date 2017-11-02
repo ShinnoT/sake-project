@@ -1,0 +1,120 @@
+
+  .show-container {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+  }
+  .sake-pic > img {
+    width: auto;
+    height: 200px;
+  }
+  .text-card {
+    font-size: 12px;
+
+  }
+  @media only screen and (max-width : 600px) {
+    .show-container {
+      /*background-color: blue;*/
+      /*color: rgba(244, 66, 66, 0.8);*/
+      color: rgba(0,0,0,0.7);
+    }
+    .name {
+      padding: 20px 10px 10px 10px;
+      font-size: 30px;
+      font-weight: bolder;
+    }
+    .show-button {
+      padding-bottom: 10px;
+      text-align: center;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .show-button > a {
+      text-decoration: none;
+    }
+    .more-button {
+      width: 100%;
+      /*height: 30px;*/
+      font-size: 15px;
+      padding: 5px;
+/*      background-color: red;
+      border: solid 2px black;*/
+    }
+    .red-button {
+      width: 100%;
+/*      height: 10px;*/
+      font-size: 15px;
+      padding: 8px 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .info {
+      text-align: center;
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    #rating-integer {
+      font-size: 30px;
+    }
+    .star {
+      color: rgba(0,0,0,0.2);
+    }
+    .info > p > i {
+      font-size: 25px;
+    }
+    #starred {
+      color: #DB665D;
+    }
+    .summary {
+      text-align: left;
+      margin: 0 auto;
+      /*padding-top: 15px;*/
+      padding-bottom: 15px;
+      width: 90%;
+      border-bottom: solid 3px rgba(0,0,0,0.2);
+      margin-top: 20px;
+      border-top: solid 3px rgba(0,0,0,0.2);
+
+    }
+    .summary > h2 {
+      text-align: center;
+      font-size: 30px;
+    }
+    .summary-down {
+      font-size: 16px;
+    }
+    .summary-flex {
+      display: flex;
+      align-content: space-between;
+    }
+    .col-xs-6 > div > p {
+      margin: 0;
+    }
+    .col-margins {
+      margin: 10px 0px;
+    }
+    .reviews-container {
+      width: 90%;
+      margin: 0 auto;
+      border-bottom: solid 3px rgba(0,0,0,0.2);
+    }
+    .reviews-container > h2 {
+      text-align: center;
+      font-size: 30px;
+    }
+    .single-review {
+      text-align: left;
+      margin-bottom: 50px;
+      margin-top: 20px;
+      border-bottom: solid 1px rgba(0,0,0,0.1);
+    }
+    .single-review > h3 {
+      font-size: 20px;
+      margin-top: 5px;
+    }
+  }
