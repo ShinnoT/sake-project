@@ -10,6 +10,7 @@
       <div class="row">
        <% unless @nihonshus.empty? %>
         <% @nihonshus.each do |nihonshu| %>
+    <% unless nihonshu == @nihonshus.find(params[:nihonshu_id]) %>
 
             <div class="col-xs-6 col-md-4 col-lg-3 mt-4">
                 <div class="carda">
@@ -25,6 +26,7 @@
                     </div>
                     <div class="card-footer">
                         <span class="float-right"><%= link_to nihonshu.price.to_i, nihonshu_nihonshu_path(@nihonshu1, nihonshu) %> ¥</span>
+<%end%>
                     </div>
                 </div>
               </div>
