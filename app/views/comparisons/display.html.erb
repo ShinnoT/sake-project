@@ -68,13 +68,13 @@
       <div class="sake-info">
         <div class="row">
           <div class="col-xs-4">
-            <img class="compare-image" src=<%= @sake1.image_url %>>
+            <%= link_to image_tag(@sake1.image_url, class: "compare-image"), nihonshu_path(@sake1) %>
           </div>
           <div class="col-xs-4">
             <h4>vs.</h4>
           </div>
           <div class="col-xs-4">
-            <img class="compare-image" src=<%= @sake2.image_url %>>
+            <%= link_to image_tag(@sake2.image_url, class: "compare-image"), nihonshu_path(@sake2) %>
           </div>
         </div>
       </div>
