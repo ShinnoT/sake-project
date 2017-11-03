@@ -48,6 +48,10 @@
     width: 50px;
     height: auto;
   }
+  .compare-small {
+    width: 100px;
+    height: 150px;
+  }
   .sake-info > .row > .col-xs-4 > h4 {
     margin-top: 50px;
   }
@@ -68,7 +72,11 @@
       <div class="sake-info">
         <div class="row">
           <div class="col-xs-4">
-            <%= link_to image_tag(@sake1.image_url, class: "compare-image"), nihonshu_path(@sake1) %>
+            <% if @sake1.name == "Chikuha Noto Junmai" %>
+              <%= link_to image_tag(@sake1.image_url, class: "compare-small"), nihonshu_path(@sake1) %>
+            <% else %>
+              <%= link_to image_tag(@sake1.image_url, class: "compare-image"), nihonshu_path(@sake1) %>
+            <% end %>
           </div>
           <div class="col-xs-4">
             <h4>vs.</h4>
