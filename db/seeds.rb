@@ -41,9 +41,10 @@ json_nihonshu = ActiveSupport::JSON.decode(File.read('./app/data/data.json'))
 # ---Reviews review.json decoding---
 json_review = ActiveSupport::JSON.decode(File.read('./app/data/review.json'))
 
+
 # get each element from json file
 json_nihonshu.each do |elm|
-  Nihonshu.create!(
+  nihonshu = Nihonshu.create!(
     name:elm['brewery'],
     acidity:elm['acidity'],
     taste: scale.sample,
@@ -55,15 +56,25 @@ json_nihonshu.each do |elm|
     classification:elm['classification'],
     aroma:elm['rice_type'],
     image_url:elm['img'])
+
   # get each element from json file
-  json_review.each do |elm|
-    Review.create!(
-      # title:"a",
-      description:elm['review'],
+  Review.create!(json_review.sample(rand(3..4)).map do |review|
+    { user: allUsers.sample,
+      nihonshu: nihonshu,
       rating: rating.sample,
-      nihonshu: Nihonshu.where( 'id >= ?', rand(Nihonshu.first.id..Nihonshu.last.id) ).first,
-      user: allUsers.sample)
-  end
+      description: review['review'] }
+  end)
+
+  # p reviews
+  # json_review.each do |elm|
+  #     Review.create!(
+  #     # title:"a",
+  #     description:elm['review'],
+  #     rating: rating.sample,
+  #     # nihonshu: Nihonshu.where( 'id > = ?', rand(Nihonshu.first.id..Nihonshu.last.id) ).first,
+  #     nihonshu: Nihonshu.where( 'id > = ?', Nihonshu.order("RANDOM()").limit(1).id),
+  #     user: allUsers.sample)
+  # end
 end
 
 puts 'Creating nihonshus&reviews!'
